@@ -1,0 +1,5 @@
+<form class="dynamic-form clr-form clr-form-horizontal" [formGroup]="formGroup" (ngSubmit)="ngOnSubmit()">
+  <dynamic-form-group [field]="formField">
+    <ng-content></ng-content>
+  </dynamic-form-group>
+</form>

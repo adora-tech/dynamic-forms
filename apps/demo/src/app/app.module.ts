@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { DocsModule } from './docs/docs.module';
 import { HomeModule } from './home/home.module';
 import { LayoutModule } from './layout/layout.module';
+import { ClarityModule } from '@clr/angular';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LayoutModule } from './layout/layout.module';
     AppStateModule,
     LayoutModule,
     HomeModule,
-    DocsModule
+    DocsModule,
+    ClarityModule
   ],
   bootstrap: [
     AppComponent

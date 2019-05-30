@@ -9,6 +9,7 @@ import { DynamicFormControlClarityModule } from './dynamic-form-control/dynamic-
 import { DynamicFormInputClarityModule } from './dynamic-form-input/dynamic-form-input.module';
 import { DynamicFormValidationClarityModule } from './dynamic-form-validation/dynamic-form-validation.module';
 import { DynamicFormWrapperClarityModule } from './dynamic-form-wrapper/dynamic-form-wrapper.module';
+import { ClrDynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { clrDynamicFormConfig, clrDynamicFormConfigFactory } from './dynamic-forms-clarity.config';
 
 @NgModule({
@@ -21,7 +22,11 @@ import { clrDynamicFormConfig, clrDynamicFormConfigFactory } from './dynamic-for
     DynamicFormValidationClarityModule,
     DynamicFormWrapperClarityModule
   ],
+  declarations: [
+    ClrDynamicFormComponent
+  ],
   exports: [
+    ClrDynamicFormComponent,
     DynamicFormsCoreModule
   ]
 })

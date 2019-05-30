@@ -15,7 +15,7 @@ export class DynamicFormComponent implements OnChanges, OnDestroy, DoCheck {
   @Input() model: any;
   @Output() formSubmit = new EventEmitter<DynamicFormSubmit>();
 
-  constructor(private formBuilder: DynamicFormBuilder) {}
+  constructor(protected formBuilder: DynamicFormBuilder) {}
 
   get formField() { return this._formField; }
   get formGroup() { return this._formField.control; }
