@@ -1,0 +1,42 @@
+:host ::ng-deep {
+  .dynamic-form {
+    @import "node_modules/bootstrap/scss/functions";
+    @import "node_modules/bootstrap/scss/variables";
+    @import "node_modules/bootstrap/scss/mixins";
+    @import "node_modules/bootstrap/scss/reboot";
+    @import "node_modules/bootstrap/scss/forms";
+
+    margin: 0 10px;
+
+    .form-control.readonly {
+      pointer-events: none;
+      background-color: #e9ecef;
+      opacity: 1; 
+    } 
+
+    .form-check.readonly {
+      pointer-events: none;
+
+      input[type=checkbox], input[type=radio] {
+        background-color: #e9ecef;
+        opacity: 1;  
+      }
+    }
+
+    .dynamic-form-group {
+      margin: 10px 0 20px 0;
+    }
+  
+    .dynamic-form-array {
+      margin: 10px 0 20px 0;
+    }
+  
+    .dynamic-form-control {
+      margin: 10px 0;
+    }
+  
+    .dynamic-form-validation {
+      color: red;
+    }
+  }
+}

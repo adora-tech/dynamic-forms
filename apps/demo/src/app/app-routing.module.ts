@@ -12,6 +12,10 @@ export const appRoutes: Routes = [
     loadChildren: './examples/bootstrap/bootstrap-examples.module#BootstrapExamplesModule'
   },
   {
+    path: 'examples/clarity',
+    loadChildren: './examples/clarity/clarity-examples.module#ClarityExamplesModule'
+  },
+  {
     path: 'examples/material',
     loadChildren: './examples/material/material-examples.module#MaterialExamplesModule'
   }

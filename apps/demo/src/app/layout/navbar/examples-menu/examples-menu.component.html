@@ -6,6 +6,7 @@
 
   <mat-menu #examples="matMenu">
     <button mat-menu-item [matMenuTriggerFor]="bootstrapExamples">Bootstrap</button>
+    <button mat-menu-item [matMenuTriggerFor]="clarityExamples">Clarity</button>
     <button mat-menu-item [matMenuTriggerFor]="materialExamples">Material</button>
   </mat-menu>
 
@@ -14,6 +15,11 @@
     </app-examples-menu-list>
   </mat-menu>
   
+  <mat-menu #clarityExamples="matMenu">
+    <app-examples-menu-list [baseUrl]="'/examples/clarity'" [menuItems]="menuItems">
+    </app-examples-menu-list>
+  </mat-menu>
+
   <mat-menu #materialExamples="matMenu">
     <app-examples-menu-list [baseUrl]="'/examples/material'" [menuItems]="menuItems">
     </app-examples-menu-list>

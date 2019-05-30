@@ -31,6 +31,12 @@
       "@dynamic-forms/bootstrap/*": [
         "libs/bootstrap/src/lib/*"
       ],
+      "@dynamic-forms/clarity": [
+        "libs/clarity/src/public_api"
+      ],
+      "@dynamic-forms/clarity/*": [
+        "libs/clarity/src/lib/*"
+      ],
       "@dynamic-forms/material": [
         "libs/material/src/public_api"
       ],
