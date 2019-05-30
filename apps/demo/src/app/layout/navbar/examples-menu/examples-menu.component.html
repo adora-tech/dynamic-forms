@@ -7,6 +7,7 @@
   <mat-menu #examples="matMenu">
     <button mat-menu-item [matMenuTriggerFor]="bootstrapExamples">Bootstrap</button>
     <button mat-menu-item [matMenuTriggerFor]="materialExamples">Material</button>
+    <button mat-menu-item [matMenuTriggerFor]="trulyExamples">Truly UI</button>
   </mat-menu>
 
   <mat-menu #bootstrapExamples="matMenu">
@@ -16,6 +17,11 @@
   
   <mat-menu #materialExamples="matMenu">
     <app-examples-menu-list [baseUrl]="'/examples/material'" [menuItems]="menuItems">
+    </app-examples-menu-list>
+  </mat-menu>
+
+  <mat-menu #materialExamples="matMenu">
+    <app-examples-menu-list [baseUrl]="'/examples/truly'" [menuItems]="menuItems">
     </app-examples-menu-list>
   </mat-menu>
 </ng-container>

@@ -14,6 +14,10 @@ export const appRoutes: Routes = [
   {
     path: 'examples/material',
     loadChildren: './examples/material/material-examples.module#MaterialExamplesModule'
+  },
+  {
+    path: 'examples/truly',
+    loadChildren: './examples/truly/truly-examples.module#TrulyExamplesModule'
   }
 ];
 

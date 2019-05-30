@@ -117,6 +117,44 @@
         }
       }
     },
+    "dynamic-forms-truly": {
+      "root": "libs/truly",
+      "sourceRoot": "libs/truly/src",
+      "projectType": "library",
+      "prefix": "truly",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/truly/tsconfig.lib.json",
+            "project": "libs/truly/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/truly/src/test.ts",
+            "tsConfig": "libs/truly/tsconfig.spec.json",
+            "karmaConfig": "libs/truly/karma.conf.js",
+            "codeCoverageExclude": [
+              "libs/truly/src/test.ts"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/truly/tsconfig.lib.json",
+              "libs/truly/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
     "dynamic-forms-demo": {
       "root": "",
       "sourceRoot": "apps/demo/src",

@@ -36,6 +36,12 @@
       ],
       "@dynamic-forms/material/*": [
         "libs/material/src/lib/*"
+      ],
+      "@dynamic-forms/truly": [
+        "libs/truly/src/public_api"
+      ],
+      "@dynamic-forms/truly/*": [
+        "libs/truly/src/lib/*"
       ]
     }
   },

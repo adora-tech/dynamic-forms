@@ -1,0 +1,20 @@
+:host ::ng-deep {
+  .dynamic-form {
+    margin: 0 10px;
+
+    .mat-form-field, .mat-checkbox, .mat-radio-group {
+      &.readonly {
+        pointer-events: none;
+      }
+    }
+
+    .mat-radio-group {
+      display: inline-flex;
+      flex-direction: column;
+      
+      .mat-radio-button {
+        margin: 5px 0;
+      }
+    }
+  }
+}
