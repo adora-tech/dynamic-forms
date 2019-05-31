@@ -1,13 +1,13 @@
 import { async, TestBed } from '@angular/core/testing';
 import { DynamicFormConfigService, DynamicFormValidationService} from '@dynamic-forms/core';
-import { DynamicFormValidationClarityComponent } from './dynamic-form-validation.component';
-import { DynamicFormValidationClarityModule } from './dynamic-form-validation.module';
+import { ClrDynamicFormValidationComponent } from './dynamic-form-validation.component';
+import { ClrDynamicFormValidationModule } from './dynamic-form-validation.module';
 
-describe('DynamicFormValidationClarityComponent', () => {
+describe('ClrDynamicFormValidationComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        DynamicFormValidationClarityModule
+        ClrDynamicFormValidationModule
       ],
       providers: [
         {
@@ -22,7 +22,7 @@ describe('DynamicFormValidationClarityComponent', () => {
   }));
 
   it('creates component', () => {
-    const fixture = TestBed.createComponent(DynamicFormValidationClarityComponent);
+    const fixture = TestBed.createComponent(ClrDynamicFormValidationComponent);
     const component = fixture.componentInstance;
 
     expect(component).toBeDefined();

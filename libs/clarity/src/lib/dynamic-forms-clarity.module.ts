@@ -5,10 +5,10 @@ import { DynamicFormsCoreModule } from '@dynamic-forms/core';
 import { dynamicFormsCoreServices } from '@dynamic-forms/core';
 import { DynamicFormConfigService } from '@dynamic-forms/core';
 import { DynamicFormConfig, DYNAMIC_FORM_CONFIG } from '@dynamic-forms/core';
-import { DynamicFormControlClarityModule } from './dynamic-form-control/dynamic-form-control.module';
-import { DynamicFormInputClarityModule } from './dynamic-form-input/dynamic-form-input.module';
-import { DynamicFormValidationClarityModule } from './dynamic-form-validation/dynamic-form-validation.module';
-import { DynamicFormWrapperClarityModule } from './dynamic-form-wrapper/dynamic-form-wrapper.module';
+import { ClrDynamicFormControlModule } from './dynamic-form-control/dynamic-form-control.module';
+import { ClrDynamicFormInputModule } from './dynamic-form-input/dynamic-form-input.module';
+import { ClrDynamicFormValidationModule } from './dynamic-form-validation/dynamic-form-validation.module';
+import { ClrDynamicFormWrapperModule } from './dynamic-form-wrapper/dynamic-form-wrapper.module';
 import { ClrDynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { clrDynamicFormConfig, clrDynamicFormConfigFactory } from './dynamic-forms-clarity.config';
 
@@ -17,10 +17,10 @@ import { clrDynamicFormConfig, clrDynamicFormConfigFactory } from './dynamic-for
     CommonModule,
     ReactiveFormsModule,
     DynamicFormsCoreModule,
-    DynamicFormControlClarityModule,
-    DynamicFormInputClarityModule,
-    DynamicFormValidationClarityModule,
-    DynamicFormWrapperClarityModule
+    ClrDynamicFormControlModule,
+    ClrDynamicFormInputModule,
+    ClrDynamicFormValidationModule,
+    ClrDynamicFormWrapperModule
   ],
   declarations: [
     ClrDynamicFormComponent

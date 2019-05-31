@@ -1,8 +1,8 @@
 import { DynamicFormWrapperConfig } from '@dynamic-forms/core';
-import { DynamicFormLabelWrapperClarityComponent } from './dynamic-form-label-wrapper.component';
+import { ClrDynamicFormControlLabelComponent } from './dynamic-form-control-label.component';
 
 export const clrDynamicFormWrapperConfig: DynamicFormWrapperConfig = {
   types: [
-    { type: 'label', component: DynamicFormLabelWrapperClarityComponent }
+    { type: 'label', component: ClrDynamicFormControlLabelComponent }
   ]
 };

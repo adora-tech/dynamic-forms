@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { DynamicFormLabelWrapperClarityComponent } from './dynamic-form-label-wrapper.component';
+import { ClrDynamicFormControlLabelComponent } from './dynamic-form-control-label.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    DynamicFormLabelWrapperClarityComponent
+    ClrDynamicFormControlLabelComponent
   ],
   entryComponents: [
-    DynamicFormLabelWrapperClarityComponent
+    ClrDynamicFormControlLabelComponent
   ]
 })
-export class DynamicFormWrapperClarityModule {}
+export class ClrDynamicFormWrapperModule {}

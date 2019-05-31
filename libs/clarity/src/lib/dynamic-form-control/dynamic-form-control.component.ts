@@ -7,7 +7,7 @@ import { DynamicFormComponentFactory } from '@dynamic-forms/core';
   templateUrl: './dynamic-form-control.component.html',
   styleUrls: ['./dynamic-form-control.component.scss']
 })
-export class DynamicFormControlClarityComponent extends DynamicFormControlComponent {
+export class ClrDynamicFormControlComponent extends DynamicFormControlComponent {
   constructor(componentFactory: DynamicFormComponentFactory) {
     super(componentFactory);
   }

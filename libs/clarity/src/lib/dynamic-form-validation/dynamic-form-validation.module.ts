@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { DynamicFormValidationClarityComponent } from './dynamic-form-validation.component';
+import { ClrDynamicFormValidationComponent } from './dynamic-form-validation.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    DynamicFormValidationClarityComponent
+    ClrDynamicFormValidationComponent
   ],
   exports: [
-    DynamicFormValidationClarityComponent
+    ClrDynamicFormValidationComponent
   ]
 })
-export class DynamicFormValidationClarityModule {}
+export class ClrDynamicFormValidationModule {}

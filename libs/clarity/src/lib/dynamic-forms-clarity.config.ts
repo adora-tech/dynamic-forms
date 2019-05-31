@@ -1,5 +1,5 @@
 import { DynamicFormArrayComponent, DynamicFormConfig, DynamicFormConfigService, DynamicFormGroupComponent } from '@dynamic-forms/core';
-import { DynamicFormControlClarityComponent } from './dynamic-form-control/dynamic-form-control.component';
+import { ClrDynamicFormControlComponent } from './dynamic-form-control/dynamic-form-control.component';
 import { clrDynamicFormInputConfig } from './dynamic-form-input/dynamic-form-input.config';
 import { clrDynamicFormWrapperConfig } from './dynamic-form-wrapper/dynamic-form-wrapper.config';
 
@@ -10,7 +10,7 @@ export const clrDynamicFormConfig: DynamicFormConfig = {
     types: [
       { type: 'group', component: DynamicFormGroupComponent },
       { type: 'array', component: DynamicFormArrayComponent },
-      { type: 'control', component: DynamicFormControlClarityComponent }
+      { type: 'control', component: ClrDynamicFormControlComponent }
     ]
   },
   inputConfig: clrDynamicFormInputConfig,
