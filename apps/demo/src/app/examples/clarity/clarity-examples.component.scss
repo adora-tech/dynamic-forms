@@ -1,7 +1,16 @@
 :host ::ng-deep {
   .dynamic-form {
-    @import "node_modules/@clr/icons/clr-icons.min";
-    @import "node_modules/@clr/ui/clr-ui.min";
+    @import 'node_modules/@clr/icons/clr-icons.min';
+    
+    $clr-forms-baseline: 6px; // 0.25rem;
+    $clr-forms-checkbox-size: 16px; // 0.66667rem;
+
+    $clr-typography-smalltext: 13px; // 0.541667rem !default; // 13px
+    $clr-typography-xsmalltext: 12px; // 0.5rem !default; // 12px
+    $clr-typography-xxsmalltext: 11px; // 0.458333rem !default; // 11px
+    $clr-typography-tinytext: 10px; // 0.416667rem !default; // 10px
+    
+    @import 'node_modules/@clr/ui/src/utils/components.clarity';
 
     margin: 0 10px;
   }
