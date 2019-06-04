@@ -9,15 +9,15 @@ export const appRoutes: Routes = [
   },
   {
     path: 'examples/bootstrap',
-    loadChildren: './examples/bootstrap/bootstrap-examples.module#BootstrapExamplesModule'
+    loadChildren: () => import('./examples/bootstrap/bootstrap-examples.module').then(m => m.BootstrapExamplesModule)
   },
   {
     path: 'examples/clarity',
-    loadChildren: './examples/clarity/clarity-examples.module#ClarityExamplesModule'
+    loadChildren: () => import('./examples/clarity/clarity-examples.module').then(m => m.ClarityExamplesModule)
   },
   {
     path: 'examples/material',
-    loadChildren: './examples/material/material-examples.module#MaterialExamplesModule'
+    loadChildren: () => import('./examples/material/material-examples.module').then(m => m.MaterialExamplesModule)
   }
 ];
 
