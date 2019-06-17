@@ -3,16 +3,16 @@ import { DynamicFormBuilder, DynamicFormComponentFactory, DynamicFormConfig, Dyn
   DynamicFormExpressionBuilder, DynamicFormValidationBuilder, DynamicFormValidationService,
   DYNAMIC_FORM_CONFIG } from '@dynamic-forms/core';
 import { matDynamicFormConfig } from './dynamic-forms-material.config';
-import { DynamicFormsMaterialModule } from './dynamic-forms-material.module';
+import { MatDynamicFormsModule } from './dynamic-forms-material.module';
 
-describe('DynamicFormsMaterialModule', () => {
+describe('MatDynamicFormsModule', () => {
   describe('without providers', () => {
     beforeEach(async(() => {
       TestBed.configureTestingModule({
         imports: [
-          DynamicFormsMaterialModule
+          MatDynamicFormsModule
         ]
-      }).compileComponents();
+      });
     }));
 
     it('does not provide DYNAMIC_FORM_CONFIG', () => {
@@ -48,7 +48,7 @@ describe('DynamicFormsMaterialModule', () => {
     beforeEach(async(() => {
       TestBed.configureTestingModule({
         imports: [
-          DynamicFormsMaterialModule.forRoot()
+          MatDynamicFormsModule.forRoot()
         ]
       }).compileComponents();
     }));
@@ -105,7 +105,7 @@ describe('DynamicFormsMaterialModule', () => {
     beforeEach(async(() => {
       TestBed.configureTestingModule({
         imports: [
-          DynamicFormsMaterialModule.forRoot(config)
+          MatDynamicFormsModule.forRoot(config)
         ]
       }).compileComponents();
     }));
