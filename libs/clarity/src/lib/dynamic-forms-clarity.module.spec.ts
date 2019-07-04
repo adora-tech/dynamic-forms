@@ -3,14 +3,14 @@ import { DynamicFormBuilder, DynamicFormComponentFactory, DynamicFormConfig, Dyn
   DynamicFormExpressionBuilder, DynamicFormValidationBuilder, DynamicFormValidationService,
   DYNAMIC_FORM_CONFIG } from '@dynamic-forms/core';
 import { clrDynamicFormConfig } from './dynamic-forms-clarity.config';
-import { DynamicFormsClarityModule } from './dynamic-forms-clarity.module';
+import { ClrDynamicFormsModule } from './dynamic-forms-clarity.module';
 
-describe('DynamicFormsClarityModule', () => {
+describe('ClrDynamicFormsModule', () => {
   describe('without providers', () => {
     beforeEach(async(() => {
       TestBed.configureTestingModule({
         imports: [
-          DynamicFormsClarityModule
+          ClrDynamicFormsModule
         ]
       }).compileComponents();
     }));
@@ -48,7 +48,7 @@ describe('DynamicFormsClarityModule', () => {
     beforeEach(async(() => {
       TestBed.configureTestingModule({
         imports: [
-          DynamicFormsClarityModule.forRoot()
+          ClrDynamicFormsModule.forRoot()
         ]
       }).compileComponents();
     }));
@@ -105,7 +105,7 @@ describe('DynamicFormsClarityModule', () => {
     beforeEach(async(() => {
       TestBed.configureTestingModule({
         imports: [
-          DynamicFormsClarityModule.forRoot(config)
+          ClrDynamicFormsModule.forRoot(config)
         ]
       }).compileComponents();
     }));

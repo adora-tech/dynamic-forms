@@ -30,10 +30,10 @@ import { clrDynamicFormConfig, clrDynamicFormConfigFactory } from './dynamic-for
     DynamicFormsCoreModule
   ]
 })
-export class DynamicFormsClarityModule {
+export class ClrDynamicFormsModule {
   static forRoot(config?: DynamicFormConfig): ModuleWithProviders {
     return {
-      ngModule: DynamicFormsClarityModule,
+      ngModule: ClrDynamicFormsModule,
       providers: [
         {
           provide: DYNAMIC_FORM_CONFIG,
