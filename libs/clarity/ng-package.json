@@ -4,6 +4,7 @@
   "lib": {
     "entryFile": "src/public_api.ts",
     "umdModuleIds": {
+      "@clr/angular": "clrAngular",
       "@dynamic-forms/core": "dynamicFormsCore"
     }
   }
