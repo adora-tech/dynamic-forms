@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { DynamicFormsMaterialModule } from '@dynamic-forms/truly';
+import { DynamicFormsTrulyModule } from '@dynamic-forms/truly';
 import { DynamicFormExampleModule } from '../dynamic-form-example.module';
-import { DynamicFormTemplateResolver } from '../dynamic-form-template.resolver';
+import { DynamicFormExampleResolver } from '../dynamic-form-example.resolver';
 import { TrulyExamplesComponent } from './truly-examples.component';
 
 @NgModule({
   imports: [
     DynamicFormExampleModule,
-    DynamicFormsMaterialModule.forRoot(),
+    DynamicFormsTrulyModule.forRoot(),
     RouterModule.forChild([
       {
         path: ':templateId',
         component: TrulyExamplesComponent,
         resolve: {
-          template: DynamicFormTemplateResolver
+          template: DynamicFormExampleResolver
         }
       }
     ])

@@ -26,17 +26,20 @@
     "build:core": "ng build dynamic-forms-core",
     "build:bootstrap": "ng build dynamic-forms-bootstrap",
     "build:material": "ng build dynamic-forms-material",
-    "build:libs": "npm run build:core && npm run build:bootstrap && npm run build:material",
+    "build:truly": "ng build dynamic-forms-truly",
+    "build:libs": "npm run build:core && npm run build:bootstrap && npm run build:material && npm run build:truly",
     "build:demo": "ng build dynamic-forms-demo",
     "build:demo:prod": "ng build dynamic-forms-demo --prod --aot",
     "test:core": "ng test dynamic-forms-core --browsers=ChromeHeadless --watch=false --code-coverage",
     "test:bootstrap": "ng test dynamic-forms-bootstrap --browsers=ChromeHeadless --watch=false --code-coverage",
     "test:material": "ng test dynamic-forms-material --browsers=ChromeHeadless --watch=false --code-coverage",
-    "test:libs": "npm run test:core && npm run test:bootstrap && npm run test:material",
+    "test:truly": "ng test dynamic-forms-truly --browsers=ChromeHeadless --watch=false --code-coverage",
+    "test:libs": "npm run test:core && npm run test:bootstrap && npm run test:material && npm run test:truly",
     "test:demo": "ng test dynamic-forms-demo --browsers=ChromeHeadless --watch=false",
     "serve:core": "ng build dynamic-forms-core --watch",
     "serve:bootstrap": "ng build dynamic-forms-bootstrap --watch",
-    "serve:material": "ng build dynamic-forms-material --watch"
+    "serve:material": "ng build dynamic-forms-material --watch",
+    "serve:truly": "ng build dynamic-forms-truly --watch"
   },
   "private": true,
   "dependencies": {
