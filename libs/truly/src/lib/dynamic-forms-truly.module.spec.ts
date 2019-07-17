@@ -3,14 +3,14 @@ import { DynamicFormBuilder, DynamicFormComponentFactory, DynamicFormConfig, Dyn
   DynamicFormExpressionBuilder, DynamicFormValidationBuilder, DynamicFormValidationService,
   DYNAMIC_FORM_CONFIG } from '@dynamic-forms/core';
 import { tlDynamicFormConfig } from './dynamic-forms-truly.config';
-import { DynamicFormsTrulyModule } from './dynamic-forms-truly.module';
+import { TlDynamicFormsModule } from './dynamic-forms-truly.module';
 
-describe('DynamicFormsTrulyModule', () => {
+describe('TlDynamicFormsModule', () => {
   describe('without providers', () => {
     beforeEach(async(() => {
       TestBed.configureTestingModule({
         imports: [
-          DynamicFormsTrulyModule 
+          TlDynamicFormsModule
         ]
       }).compileComponents();
     }));
@@ -48,7 +48,7 @@ describe('DynamicFormsTrulyModule', () => {
     beforeEach(async(() => {
       TestBed.configureTestingModule({
         imports: [
-          DynamicFormsTrulyModule.forRoot()
+          TlDynamicFormsModule.forRoot()
         ]
       }).compileComponents();
     }));
@@ -105,7 +105,7 @@ describe('DynamicFormsTrulyModule', () => {
     beforeEach(async(() => {
       TestBed.configureTestingModule({
         imports: [
-          DynamicFormsTrulyModule.forRoot(config)
+          TlDynamicFormsModule.forRoot(config)
         ]
       }).compileComponents();
     }));
