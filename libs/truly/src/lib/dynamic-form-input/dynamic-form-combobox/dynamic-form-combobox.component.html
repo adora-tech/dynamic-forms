@@ -1,6 +1,5 @@
-<input [id]="id" class="form-control" type="text" list="list" [ngClass]="{ 'readonly': field.readonly }" 
-  [placeholder]="input.placeholder || ''" [pattern]="input.pattern" [readonly]="field.readonly" 
-  [formControl]="control" autocomplete="off" /> 
-<datalist id="list">
-  <option *ngFor="let option of input.options" [value]="option">{{option}}</option>
-</datalist>
+<tl-autocomplete [id]="id" [data]="input.options" [modelMode]="'string'" 
+  [label]="template.label" [labelPlacement]="'top'"  
+  [placeholder]="input.placeholder" 
+  [formControl]="control">
+</tl-autocomplete> 

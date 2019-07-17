@@ -1,20 +1,17 @@
 :host ::ng-deep {
   .dynamic-form {
+    /*
+    @import "node_modules/@angular/cdk/overlay-prebuilt.css";
+    @import "node_modules/truly-ui/css/icons/dx-icons/css/icons.scss";
+    @import "node_modules/truly-ui/css/icons/fa-icons/css/icons.scss";
+    @import "node_modules/truly-ui/css/icons/ion-icons/css/icons.scss";
+    @import "node_modules/truly-ui/css/icons/animations.scss";
+    */
+
     margin: 0 10px;
 
-    .mat-form-field, .mat-checkbox, .mat-radio-group {
-      &.readonly {
-        pointer-events: none;
-      }
-    }
-
-    .mat-radio-group {
-      display: inline-flex;
-      flex-direction: column;
-      
-      .mat-radio-button {
-        margin: 5px 0;
-      }
+    .form-control.readonly {
+      pointer-events: none;
     }
   }
 }

@@ -1,4 +1,6 @@
-<input [id]="id" class="form-control" type="date" [ngClass]="{ 'readonly': field.readonly }" 
-  [placeholder]="input.placeholder" [min]="input.min" [max]="input.max" [readonly]="field.readonly" 
-  [formControl]="control" /> 
+<tl-datepicker [id]="id" class="form-control" date [ngClass]="{ 'readonly': field.readonly }" 
+  [label]="template.label" [labelPlacement]="'top'" 
+  [placeholder]="input.placeholder" [readonly]="field.readonly" 
+  [formControl]="control">
+</tl-datepicker> 
   

@@ -6,8 +6,9 @@ import { DynamicFormConfigService } from '@dynamic-forms/core';
 import { DynamicFormsCoreModule } from '@dynamic-forms/core';
 import { dynamicFormsCoreServices } from '@dynamic-forms/core';
 import { CoreModule } from 'truly-ui';
-import { DynamicFormInputTrulyModule } from './dynamic-form-input/dynamic-form-input.module';
-import { trulyDynamicFormConfig, trulyDynamicFormConfigFactory } from './dynamic-forms-truly.config';
+import { TlDynamicFormControlModule } from './dynamic-form-control/dynamic-form-control.module';
+import { TlDynamicFormInputModule } from './dynamic-form-input/dynamic-form-input.module';
+import { tlDynamicFormConfig, tlDynamicFormConfigFactory } from './dynamic-forms-truly.config';
 
 @NgModule({
   imports: [
@@ -17,25 +18,26 @@ import { trulyDynamicFormConfig, trulyDynamicFormConfigFactory } from './dynamic
     CoreModule.forRoot({
       theme: 'indigo'
     }),
-    DynamicFormInputTrulyModule
+    TlDynamicFormControlModule,
+    TlDynamicFormInputModule
   ],
   exports: [
     DynamicFormsCoreModule
   ]
 })
-export class DynamicFormsTrulyModule {
+export class TlDynamicFormsModule {
   static forRoot(config?: DynamicFormConfig): ModuleWithProviders {
     return {
-      ngModule: DynamicFormsTrulyModule,
+      ngModule: TlDynamicFormsModule,
       providers: [
         {
           provide: DYNAMIC_FORM_CONFIG,
-          useValue: config || trulyDynamicFormConfig,
+          useValue: config || tlDynamicFormConfig,
           multi: true
         },
         {
           provide: DynamicFormConfigService,
-          useFactory: trulyDynamicFormConfigFactory,
+          useFactory: tlDynamicFormConfigFactory,
           deps: [ DYNAMIC_FORM_CONFIG ]
         },
         ...dynamicFormsCoreServices

@@ -1,4 +1,6 @@
-<input [id]="id" class="form-control" [type]="input.inputType" [ngClass]="{ 'readonly': field.readonly }" 
-  [placeholder]="input.placeholder || ''" [pattern]="input.pattern" [readonly]="field.readonly" 
-  [formControl]="control" /> 
+<tl-input [id]="id" class="form-control" [type]="input.inputType" [ngClass]="{ 'readonly': field.readonly }"
+  [label]="template.label" [labelPlacement]="'top'"
+  [placeholder]="input.placeholder" [pattern]="input.pattern" [readonly]="field.readonly" 
+  [formControl]="control" >
+</tl-input> 
   

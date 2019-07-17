@@ -1,13 +1,8 @@
-import {
-  DynamicFormArrayComponent,
-  DynamicFormConfig,
-  DynamicFormConfigService,
-  DynamicFormControlComponent,
-  DynamicFormGroupComponent
-} from '@dynamic-forms/core';
+import { DynamicFormArrayComponent, DynamicFormConfig, DynamicFormConfigService, DynamicFormGroupComponent } from '@dynamic-forms/core';
+import { TlDynamicFormControlComponent } from './dynamic-form-control/dynamic-form-control.component';
 import { trulyDynamicFormInputConfig } from './dynamic-form-input/dynamic-form-input.config';
 
-export const trulyDynamicFormConfig: DynamicFormConfig = {
+export const tlDynamicFormConfig: DynamicFormConfig = {
   module: 'truly',
   wrapperConfig: {
     types: []
@@ -16,7 +11,7 @@ export const trulyDynamicFormConfig: DynamicFormConfig = {
     types: [
       { type: 'group', component: DynamicFormGroupComponent },
       { type: 'array', component: DynamicFormArrayComponent },
-      { type: 'control', component: DynamicFormControlComponent }
+      { type: 'control', component: TlDynamicFormControlComponent }
     ]
   },
   inputConfig: trulyDynamicFormInputConfig,
@@ -34,7 +29,7 @@ export const trulyDynamicFormConfig: DynamicFormConfig = {
   }
 };
 
-export function trulyDynamicFormConfigFactory(configs: DynamicFormConfig[]): DynamicFormConfigService {
-  const config = configs.find(c => c.module === trulyDynamicFormConfig.module);
+export function tlDynamicFormConfigFactory(configs: DynamicFormConfig[]): DynamicFormConfigService {
+  const config = configs.find(c => c.module === tlDynamicFormConfig.module);
   return new DynamicFormConfigService(config);
 }

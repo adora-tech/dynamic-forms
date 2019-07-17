@@ -11,10 +11,10 @@ import { TrulyExamplesComponent } from './truly-examples.component';
     DynamicFormsTrulyModule.forRoot(),
     RouterModule.forChild([
       {
-        path: ':templateId',
+        path: ':exampleId',
         component: TrulyExamplesComponent,
         resolve: {
-          template: DynamicFormExampleResolver
+          definition: DynamicFormExampleResolver
         }
       }
     ])
