@@ -19,6 +19,12 @@
       "@dynamic-forms/bootstrap/*": [
         "dist/@dynamic-forms/bootstrap/*"
       ],
+      "@dynamic-forms/clarity": [
+        "dist/@dynamic-forms/clarity"
+      ],
+      "@dynamic-forms/clarity/*": [
+        "dist/@dynamic-forms/clarity/*"
+      ],
       "@dynamic-forms/material": [
         "dist/@dynamic-forms/material"
       ],
