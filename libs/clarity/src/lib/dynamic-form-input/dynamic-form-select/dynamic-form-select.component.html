@@ -1,5 +1,37 @@
-<select [id]="id" class="form-control" clrInput [ngClass]="{ 'readonly': field.readonly }" [formControl]="control">
-  <option [value]="null" disabled hidden>{{ input.placeholder }}</option>
-  <option *ngFor="let option of input.options" [value]="option.value">{{ option.label }}</option>
-</select>
-  
+<ng-container *ngIf="!input.multiple; else optionsMultiple">
+  <clr-select-container>
+    <label [for]="id">{{ template.label }}</label>
+    <select [id]="id" clrSelect [required]="validation?.required" [formControl]="control">
+      <option [value]="null" disabled hidden>{{ input.placeholder }}</option>
+      <ng-container *ngFor="let option of input.options">
+        <ng-container *ngIf="!option.items; else optionGroup">
+          <option [ngValue]="option.value">{{ option.label }}</option>      
+        </ng-container>
+        <ng-template #optionGroup>
+          <optgroup [label]="option.label">
+            <option *ngFor="let optionItem of option.items" [ngValue]="optionItem.value">{{ optionItem.label }}</option>
+          </optgroup>      
+        </ng-template>
+      </ng-container>
+    </select>
+  </clr-select-container>
+</ng-container>
+
+<ng-template #optionsMultiple>
+  <clr-select-container>
+    <label [for]="id">{{ template.label }}</label>
+    <select [id]="id" clrSelect [required]="validation?.required" [formControl]="control" multiple>
+    <ng-container *ngFor="let option of input.options">
+      <ng-container *ngIf="!option.items; else optionGroup">
+        <option [ngValue]="option.value">{{ option.label }}</option>      
+      </ng-container>
+      <ng-template #optionGroup>
+        <optgroup [label]="option.label">
+          <option *ngFor="let optionItem of option.items" [ngValue]="optionItem.value">{{ optionItem.label }}</option>
+        </optgroup>      
+      </ng-template>
+    </ng-container>
+    </select>
+  </clr-select-container>
+</ng-template>
+

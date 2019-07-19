@@ -1,4 +1,9 @@
-<input [id]="id" class="form-control clr-input" [type]="input.inputType" [ngClass]="{ 'readonly': field.readonly }" 
-  [placeholder]="input.placeholder || ''" [pattern]="input.pattern" [readonly]="field.readonly" 
-  [formControl]="control" /> 
+<clr-input-container>
+  <label [for]="id">{{ template.label }}</label>
+  <input [id]="id" clrInput [type]="input.inputType"
+      [placeholder]="input.placeholder || ''" [pattern]="input.pattern" [readonly]="field.readonly" 
+      [required]="validation?.required" [formControl]="control" />  
+</clr-input-container>
+
+
   

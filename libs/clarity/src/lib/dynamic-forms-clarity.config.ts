@@ -1,11 +1,12 @@
 import { DynamicFormArrayComponent, DynamicFormConfig, DynamicFormConfigService, DynamicFormGroupComponent } from '@dynamic-forms/core';
 import { ClrDynamicFormControlComponent } from './dynamic-form-control/dynamic-form-control.component';
 import { clrDynamicFormInputConfig } from './dynamic-form-input/dynamic-form-input.config';
-import { clrDynamicFormWrapperConfig } from './dynamic-form-wrapper/dynamic-form-wrapper.config';
 
 export const clrDynamicFormConfig: DynamicFormConfig = {
   module: 'clarity',
-  wrapperConfig: clrDynamicFormWrapperConfig,
+  wrapperConfig: {
+    types: []
+  },
   fieldConfig: {
     types: [
       { type: 'group', component: DynamicFormGroupComponent },

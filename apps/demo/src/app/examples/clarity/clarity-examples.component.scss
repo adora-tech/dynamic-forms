@@ -1,5 +1,5 @@
 :host ::ng-deep {
-  .dynamic-form {    
+  .dynamic-form {
     /*
     $clr-forms-baseline: 6px; // 0.25rem;
     $clr-forms-checkbox-size: 16px; // 0.66667rem;
@@ -10,7 +10,7 @@
     $clr-typography-tinytext: 10px; // 0.416667rem !default; // 10px
     */
     
-    @import 'node_modules/@clr/ui/src/utils/components.clarity';
+    @import "node_modules/@clr/ui/src/utils/components.clarity";
 
     margin: 0 10px;
   }

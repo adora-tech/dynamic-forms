@@ -1,7 +1,7 @@
-<div class="clr-checkbox-wrapper" [ngClass]="{ 'readonly': field.readonly }">
-  <input [id]="id" class="clr-checkbox" type="checkbox" [readonly]="field.readonly" 
+<clr-checkbox-wrapper>
+  <input [id]="id" type="checkbox" clrCheckbox [readonly]="field.readonly" 
     [required]="validation?.required" [formControl]="control" />
-  <label [for]="id" class="clr-control-label">{{ template.label }}</label>  
-</div>
+  <label [for]="id">{{ template.label }}</label>  
+</clr-checkbox-wrapper>
 
 

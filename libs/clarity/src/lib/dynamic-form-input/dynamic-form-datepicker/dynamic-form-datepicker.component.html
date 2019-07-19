@@ -1,4 +1,9 @@
-<input [id]="id" class="form-control" clrDate type="date" [ngClass]="{ 'readonly': field.readonly }" 
-  [placeholder]="input.placeholder" [min]="input.min" [max]="input.max" [readonly]="field.readonly" 
-  [formControl]="control" /> 
+<clr-date-container>
+  <label [for]="id">{{ template.label }}</label>
+  <input [id]="id" clrDate type="date" 
+    [placeholder]="input.placeholder" [min]="input.min" [max]="input.max" [readonly]="field.readonly" 
+    [required]="validation?.required" [formControl]="control" /> 
+</clr-date-container>
+
+
   

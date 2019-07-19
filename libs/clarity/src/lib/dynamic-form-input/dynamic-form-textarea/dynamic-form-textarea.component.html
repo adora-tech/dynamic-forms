@@ -1,5 +1,9 @@
-<textarea [id]="id" class="form-control" clrTextarea [ngClass]="{ 'readonly': field.readonly }" 
-  [placeholder]="input.placeholder || ''" [pattern]="input.pattern" [readonly]="field.readonly" 
-  [formControl]="control">
-</textarea> 
+<clr-textarea-container>
+  <label [for]="id">{{ template.label }}</label>
+  <textarea [id]="id" clrTextarea
+    [placeholder]="input.placeholder || ''" [pattern]="input.pattern" [readonly]="field.readonly" 
+    [required]="validation?.required" [formControl]="control">
+  </textarea>
+</clr-textarea-container>
+ 
   

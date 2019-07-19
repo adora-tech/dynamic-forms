@@ -7,8 +7,8 @@ import { DynamicFormCheckboxComponent } from './dynamic-form-checkbox.component'
 @NgModule({
   imports: [
     CommonModule,
-    ClrCheckboxModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ClrCheckboxModule
   ],
   declarations: [
     DynamicFormCheckboxComponent
