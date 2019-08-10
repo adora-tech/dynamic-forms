@@ -1,11 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { ClrSelectContainer } from '@clr/angular';
 import { DynamicForm, DynamicFormControl, DynamicFormControlDefinition, DynamicFormDefinition,
   DynamicFormSelect } from '@dynamic-forms/core';
 import { DynamicFormSelectComponent } from './dynamic-form-select.component';
 import { DynamicFormSelectModule } from './dynamic-form-select.module';
 
-describe('DynamicFormDropdownComponent', () => {
+describe('DynamicFormSelectComponent', () => {
   let fixture: ComponentFixture<DynamicFormSelectComponent>;
   let component: DynamicFormSelectComponent;
   let form: DynamicForm;
@@ -48,7 +49,8 @@ describe('DynamicFormDropdownComponent', () => {
   });
 
   it('creates component template', () => {
-    const selectDebugElement = fixture.debugElement.query(By.css('select.form-control'));
+    const selectWrapperDebugElement = fixture.debugElement.query(By.directive(ClrSelectContainer));
+    const selectDebugElement = selectWrapperDebugElement.query(By.css('select'));
     const optionDebugElements = selectDebugElement.queryAll(By.css('option'));
     const selectElement = <HTMLSelectElement>selectDebugElement.nativeElement;
     const optionElements = <HTMLOptionElement[]>optionDebugElements.map(elem => elem.nativeElement);
@@ -66,7 +68,8 @@ describe('DynamicFormDropdownComponent', () => {
   });
 
   it('sets dynamic form control to readonly', () => {
-    const selectDebugElement = fixture.debugElement.query(By.css('select.form-control'));
+    const selectWrapperDebugElement = fixture.debugElement.query(By.directive(ClrSelectContainer));
+    const selectDebugElement = selectWrapperDebugElement.query(By.css('select'));
     const selectElement = <HTMLSelectElement>selectDebugElement.nativeElement;
 
     expect(selectElement.className).not.toContain('readonly');

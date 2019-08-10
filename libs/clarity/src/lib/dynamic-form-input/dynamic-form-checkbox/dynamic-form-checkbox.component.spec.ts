@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { ClrCheckboxWrapper } from '@clr/angular';
 import { DynamicForm, DynamicFormCheckbox, DynamicFormControl, DynamicFormControlDefinition,
   DynamicFormDefinition } from '@dynamic-forms/core';
 import { DynamicFormCheckboxComponent } from './dynamic-form-checkbox.component';
@@ -37,14 +38,14 @@ describe('DynamicFormCheckboxComponent', () => {
   });
 
   it('creates component template', () => {
-    const checkDebugElement = fixture.debugElement.query(By.css('div.clr-checkbox-wrapper'));
-    const inputDebugElement = checkDebugElement.query(By.css('input.clr-checkbox'));
-    const labelDebugElement = checkDebugElement.query(By.css('label.clr-control-label'));
-    const checkElement = <HTMLDivElement>checkDebugElement.nativeElement;
+    const inputWrapperDebugElement = fixture.debugElement.query(By.directive(ClrCheckboxWrapper));
+    const inputDebugElement = inputWrapperDebugElement.query(By.css('input'));
+    const labelDebugElement = inputWrapperDebugElement.query(By.css('label.clr-control-label'));
+    const inputWrapperElement = <HTMLDivElement>inputWrapperDebugElement.nativeElement;
     const inputElement = <HTMLInputElement>inputDebugElement.nativeElement;
     const labelElement = <HTMLLabelElement>labelDebugElement.nativeElement;
 
-    expect(checkElement).toBeDefined();
+    expect(inputWrapperElement).toBeDefined();
     expect(inputElement).toBeDefined();
     expect(inputElement.id).toBe(component.id);
     expect(inputElement.type).toBe('checkbox');
@@ -54,18 +55,18 @@ describe('DynamicFormCheckboxComponent', () => {
   });
 
   it('sets dynamic form control to readonly', () => {
-    const checkDebugElement = fixture.debugElement.query(By.css('div.clr-checkbox-wrapper'));
-    const inputDebugElement = checkDebugElement.query(By.css('input.clr-checkbox'));
-    const checkElement = <HTMLElement>checkDebugElement.nativeElement;
+    const inputWrapperDebugElement = fixture.debugElement.query(By.directive(ClrCheckboxWrapper));
+    const inputDebugElement = inputWrapperDebugElement.query(By.css('input'));
+    const inputWrapperElement = <HTMLElement>inputWrapperDebugElement.nativeElement;
     const inputElement = <HTMLInputElement>inputDebugElement.nativeElement;
 
-    expect(checkElement.className).not.toContain('readonly');
+    expect(inputWrapperElement.className).not.toContain('readonly');
     expect(inputElement.readOnly).not.toBe(true);
 
     component.template.readonly = true;
     fixture.detectChanges();
 
-    expect(checkElement.className).toContain('readonly');
+    expect(inputWrapperElement.className).toContain('readonly');
     expect(inputElement.readOnly).toBe(true);
   });
 });

@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { ClrDateContainer } from '@clr/angular';
 import { DynamicForm, DynamicFormControl, DynamicFormControlDefinition, DynamicFormDatepicker,
   DynamicFormDefinition } from '@dynamic-forms/core';
 import { DynamicFormDatepickerComponent } from './dynamic-form-datepicker.component';
@@ -37,7 +38,8 @@ describe('DynamicFormDatepickerComponent', () => {
   });
 
   it('creates component template', () => {
-    const inputDebugElement = fixture.debugElement.query(By.css('input.form-control'));
+    const inputWrapperDebugElement = fixture.debugElement.query(By.directive(ClrDateContainer));
+    const inputDebugElement = inputWrapperDebugElement.query(By.css('input'));
     const inputElement = <HTMLInputElement>inputDebugElement.nativeElement;
 
     expect(inputElement).toBeDefined();
@@ -46,7 +48,8 @@ describe('DynamicFormDatepickerComponent', () => {
   });
 
   it('sets dynamic form control to readonly', () => {
-    const inputDebugElement = fixture.debugElement.query(By.css('input.form-control'));
+    const inputWrapperDebugElement = fixture.debugElement.query(By.directive(ClrDateContainer));
+    const inputDebugElement = inputWrapperDebugElement.query(By.css('input'));
     const inputElement = <HTMLInputElement>inputDebugElement.nativeElement;
 
     expect(inputElement.className).not.toContain('readonly');

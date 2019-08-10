@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { ClrTextareaContainer } from '@clr/angular';
 import { DynamicForm, DynamicFormControl, DynamicFormControlDefinition, DynamicFormDefinition,
   DynamicFormTextarea } from '@dynamic-forms/core';
 import { DynamicFormTextareaComponent } from './dynamic-form-textarea.component';
@@ -37,7 +38,8 @@ describe('DynamicFormTextareaComponent', () => {
   });
 
   it('creates component template', () => {
-    const textareaDebugElement = fixture.debugElement.query(By.css('textarea.form-control'));
+    const textareaWrapperDebugElement = fixture.debugElement.query(By.directive(ClrTextareaContainer));
+    const textareaDebugElement = textareaWrapperDebugElement.query(By.css('textarea'));
     const textareaElement = <HTMLTextAreaElement>textareaDebugElement.nativeElement;
 
     expect(textareaElement).toBeDefined();
@@ -45,7 +47,8 @@ describe('DynamicFormTextareaComponent', () => {
   });
 
   it('sets dynamic form control to readonly', () => {
-    const textareaDebugElement = fixture.debugElement.query(By.css('textarea.form-control'));
+    const textareaWrapperDebugElement = fixture.debugElement.query(By.directive(ClrTextareaContainer));
+    const textareaDebugElement = textareaWrapperDebugElement.query(By.css('textarea'));
     const textareaElement = <HTMLTextAreaElement>textareaDebugElement.nativeElement;
 
     expect(textareaElement.className).not.toContain('readonly');

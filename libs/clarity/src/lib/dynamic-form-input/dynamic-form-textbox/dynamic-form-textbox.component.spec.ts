@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { ClrInputContainer } from '@clr/angular';
 import { DynamicForm, DynamicFormControl, DynamicFormControlDefinition, DynamicFormDefinition,
   DynamicFormTextbox } from '@dynamic-forms/core';
 import { DynamicFormTextboxComponent } from './dynamic-form-textbox.component';
@@ -37,7 +38,8 @@ describe('DynamicFormTextboxComponent', () => {
   });
 
   it('creates component template', () => {
-    const inputDebugElement = fixture.debugElement.query(By.css('input.form-control'));
+    const inputWrapperDebugElement = fixture.debugElement.query(By.css('div.dynamic-form-control'));
+    const inputDebugElement = inputWrapperDebugElement.query(By.css('input'));
     const inputElement = <HTMLInputElement>inputDebugElement.nativeElement;
 
     expect(inputElement).toBeDefined();
@@ -46,7 +48,8 @@ describe('DynamicFormTextboxComponent', () => {
   });
 
   it('sets dynamic form control to readonly', () => {
-    const inputDebugElement = fixture.debugElement.query(By.css('input.form-control'));
+    const inputWrapperDebugElement = fixture.debugElement.query(By.directive(ClrInputContainer));
+    const inputDebugElement = inputWrapperDebugElement.query(By.css('input'));
     const inputElement = <HTMLInputElement>inputDebugElement.nativeElement;
 
     expect(inputElement.className).not.toContain('readonly');

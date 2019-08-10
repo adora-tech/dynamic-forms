@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { ClrInputContainer } from '@clr/angular';
 import { DynamicForm, DynamicFormCombobox, DynamicFormControl, DynamicFormControlDefinition,
   DynamicFormDefinition } from '@dynamic-forms/core';
 import { DynamicFormComboboxComponent } from './dynamic-form-combobox.component';
@@ -48,8 +49,9 @@ describe('DynamicFormComboboxComponent', () => {
   });
 
   it('creates component template', () => {
-    const inputDebugElement = fixture.debugElement.query(By.css('input.form-control'));
-    const inputListDebugElement = fixture.debugElement.query(By.css('datalist'));
+    const inputWrapperDebugElement = fixture.debugElement.query(By.directive(ClrInputContainer));
+    const inputDebugElement = inputWrapperDebugElement.query(By.css('input'));
+    const inputListDebugElement = inputWrapperDebugElement.query(By.css('datalist'));
     const inputListItemDebugElements = inputListDebugElement.queryAll(By.css('option'));
 
     const inputElement = <HTMLInputElement>inputDebugElement.nativeElement;
@@ -71,7 +73,8 @@ describe('DynamicFormComboboxComponent', () => {
   });
 
   it('sets dynamic form control to readonly', () => {
-    const inputDebugElement = fixture.debugElement.query(By.css('input.form-control'));
+    const inputWrapperDebugElement = fixture.debugElement.query(By.directive(ClrInputContainer));
+    const inputDebugElement = inputWrapperDebugElement.query(By.css('input'));
     const inputElement = <HTMLInputElement>inputDebugElement.nativeElement;
 
     expect(inputElement.className).not.toContain('readonly');
