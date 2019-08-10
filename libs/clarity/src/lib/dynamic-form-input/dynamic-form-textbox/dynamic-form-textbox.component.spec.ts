@@ -38,7 +38,7 @@ describe('DynamicFormTextboxComponent', () => {
   });
 
   it('creates component template', () => {
-    const inputWrapperDebugElement = fixture.debugElement.query(By.css('div.dynamic-form-control'));
+    const inputWrapperDebugElement = fixture.debugElement.query(By.directive(ClrInputContainer));
     const inputDebugElement = inputWrapperDebugElement.query(By.css('input'));
     const inputElement = <HTMLInputElement>inputDebugElement.nativeElement;
 
