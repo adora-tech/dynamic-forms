@@ -71,16 +71,12 @@ describe('DynamicFormRadioComponent', () => {
     const checkElements = <HTMLDivElement[]>checkDebugElements.map(elem => elem.nativeElement);
     const inputElements = <HTMLInputElement[]>inputDebugElements.map(elem => elem.nativeElement);
 
-    expect(checkElements[0].className).not.toContain('readonly');
-    expect(checkElements[1].className).not.toContain('readonly');
     expect(inputElements[0].readOnly).not.toBe(true);
     expect(inputElements[1].readOnly).not.toBe(true);
 
     component.template.readonly = true;
     fixture.detectChanges();
 
-    expect(checkElements[0].className).toContain('readonly');
-    expect(checkElements[1].className).toContain('readonly');
     expect(inputElements[0].readOnly).toBe(true);
     expect(inputElements[1].readOnly).toBe(true);
   });

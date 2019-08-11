@@ -51,13 +51,11 @@ describe('DynamicFormTextareaComponent', () => {
     const textareaDebugElement = textareaWrapperDebugElement.query(By.css('textarea'));
     const textareaElement = <HTMLTextAreaElement>textareaDebugElement.nativeElement;
 
-    expect(textareaElement.className).not.toContain('readonly');
     expect(textareaElement.readOnly).not.toBe(true);
 
     component.template.readonly = true;
     fixture.detectChanges();
 
-    expect(textareaElement.className).toContain('readonly');
     expect(textareaElement.readOnly).toBe(true);
   });
 });

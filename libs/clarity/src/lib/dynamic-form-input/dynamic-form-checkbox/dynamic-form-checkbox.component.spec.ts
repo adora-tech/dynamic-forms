@@ -60,13 +60,11 @@ describe('DynamicFormCheckboxComponent', () => {
     const inputWrapperElement = <HTMLElement>inputWrapperDebugElement.nativeElement;
     const inputElement = <HTMLInputElement>inputDebugElement.nativeElement;
 
-    expect(inputWrapperElement.className).not.toContain('readonly');
     expect(inputElement.readOnly).not.toBe(true);
 
     component.template.readonly = true;
     fixture.detectChanges();
 
-    expect(inputWrapperElement.className).toContain('readonly');
     expect(inputElement.readOnly).toBe(true);
   });
 });
