@@ -99,7 +99,7 @@ describe('TlDynamicFormsModule', () => {
 
   describe('forRoot with provided config', () => {
     const config: DynamicFormConfig = {
-      module: 'material'
+      module: 'truly'
     };
 
     beforeEach(async(() => {

@@ -64,16 +64,4 @@ describe('DynamicFormSelectComponent', () => {
     expect(optionElements[2].value).toBe('value2');
     expect(optionElements[2].innerText).toBe('label2');
   });
-
-  it('sets dynamic form control to readonly', () => {
-    const selectDebugElement = fixture.debugElement.query(By.css('select.form-control'));
-    const selectElement = <HTMLSelectElement>selectDebugElement.nativeElement;
-
-    expect(selectElement.className).not.toContain('readonly');
-
-    component.template.readonly = true;
-    fixture.detectChanges();
-
-    expect(selectElement.className).toContain('readonly');
-  });
 });

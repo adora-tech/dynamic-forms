@@ -4,8 +4,7 @@ import { DynamicFormComponentFactory } from '@dynamic-forms/core';
 
 @Component({
   selector: 'tl-dynamic-form-control',
-  templateUrl: './dynamic-form-control.component.html',
-  styleUrls: ['./dynamic-form-control.component.scss']
+  templateUrl: './dynamic-form-control.component.html'
 })
 export class TlDynamicFormControlComponent extends DynamicFormControlComponent {
   constructor(componentFactory: DynamicFormComponentFactory) {
