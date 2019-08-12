@@ -2,7 +2,8 @@
   <label [for]="id">{{ template.label }}</label>
   <input [id]="id" clrInput type="number"
     [placeholder]="input.placeholder || ''" [min]="input.min" [max]="input.max" [readonly]="field.readonly" 
-    [required]="validation?.required" [formControl]="control" /> 
+    [required]="validation?.required" [formControl]="control" />
+  <clr-control-error>{{ errorMessage }}</clr-control-error>       
 </clr-input-container>
 
 

@@ -8,7 +8,6 @@ import { DynamicFormConfig, DYNAMIC_FORM_CONFIG } from '@dynamic-forms/core';
 import { DynamicFormsCoreModule } from '@dynamic-forms/core';
 import { ClrDynamicFormControlModule } from './dynamic-form-control/dynamic-form-control.module';
 import { ClrDynamicFormInputModule } from './dynamic-form-input/dynamic-form-input.module';
-import { ClrDynamicFormValidationModule } from './dynamic-form-validation/dynamic-form-validation.module';
 import { ClrDynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { clrDynamicFormConfig, clrDynamicFormConfigFactory } from './dynamic-forms-clarity.config';
 
@@ -19,8 +18,7 @@ import { clrDynamicFormConfig, clrDynamicFormConfigFactory } from './dynamic-for
     ClarityModule,
     DynamicFormsCoreModule,
     ClrDynamicFormControlModule,
-    ClrDynamicFormInputModule,
-    ClrDynamicFormValidationModule
+    ClrDynamicFormInputModule
   ],
   declarations: [
     ClrDynamicFormComponent
