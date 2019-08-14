@@ -6,7 +6,7 @@ describe('ClrDynamicFormInputComponent', () => {
     const validationService = <DynamicFormValidationService>{
       getErrorMessage: errors => errors ? 'Error message' : null
     };
-    const component = new MatDynamicFormInputComponent(validationService);
+    const component = new ClrDynamicFormInputComponent(validationService);
 
     component.field = <DynamicFormControl>{ control: { errors: {} } };
 

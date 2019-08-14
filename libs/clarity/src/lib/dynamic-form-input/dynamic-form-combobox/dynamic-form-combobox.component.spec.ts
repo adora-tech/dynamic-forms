@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { ClrInputContainer } from '@clr/angular';
-import { DynamicForm, DynamicFormCombobox, DynamicFormControl, DynamicFormControlDefinition,
-  DynamicFormDefinition } from '@dynamic-forms/core';
+import { DynamicForm, DynamicFormCombobox, DynamicFormConfig, DynamicFormConfigService,
+  DynamicFormControl, DynamicFormControlDefinition, DynamicFormDefinition,
+  DynamicFormValidationService} from '@dynamic-forms/core';
 import { DynamicFormComboboxComponent } from './dynamic-form-combobox.component';
 import { DynamicFormComboboxModule } from './dynamic-form-combobox.module';
 
@@ -17,6 +18,13 @@ describe('DynamicFormComboboxComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         DynamicFormComboboxModule
+      ],
+      providers: [
+        {
+          provide: DynamicFormConfigService,
+          useValue: new DynamicFormConfigService(<DynamicFormConfig>{})
+        },
+        DynamicFormValidationService
       ]
     }).compileComponents();
 
@@ -51,7 +59,7 @@ describe('DynamicFormComboboxComponent', () => {
   it('creates component template', () => {
     const inputWrapperDebugElement = fixture.debugElement.query(By.directive(ClrInputContainer));
     const inputDebugElement = inputWrapperDebugElement.query(By.css('input'));
-    const inputListDebugElement = inputWrapperDebugElement.query(By.css('datalist'));
+    const inputListDebugElement = fixture.debugElement.query(By.css('datalist'));
     const inputListItemDebugElements = inputListDebugElement.queryAll(By.css('option'));
 
     const inputElement = <HTMLInputElement>inputDebugElement.nativeElement;

@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { ClrCheckboxWrapper } from '@clr/angular';
-import { DynamicForm, DynamicFormCheckbox, DynamicFormControl, DynamicFormControlDefinition,
-  DynamicFormDefinition } from '@dynamic-forms/core';
+import { DynamicForm, DynamicFormCheckbox, DynamicFormConfig, DynamicFormConfigService,
+  DynamicFormControl, DynamicFormControlDefinition, DynamicFormDefinition,
+  DynamicFormValidationService} from '@dynamic-forms/core';
 import { DynamicFormCheckboxComponent } from './dynamic-form-checkbox.component';
 import { DynamicFormCheckboxModule } from './dynamic-form-checkbox.module';
 
@@ -17,6 +18,13 @@ describe('DynamicFormCheckboxComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         DynamicFormCheckboxModule
+      ],
+      providers: [
+        {
+          provide: DynamicFormConfigService,
+          useValue: new DynamicFormConfigService(<DynamicFormConfig>{})
+        },
+        DynamicFormValidationService
       ]
     }).compileComponents();
 
@@ -40,7 +48,7 @@ describe('DynamicFormCheckboxComponent', () => {
   it('creates component template', () => {
     const inputWrapperDebugElement = fixture.debugElement.query(By.directive(ClrCheckboxWrapper));
     const inputDebugElement = inputWrapperDebugElement.query(By.css('input'));
-    const labelDebugElement = inputWrapperDebugElement.query(By.css('label.clr-control-label'));
+    const labelDebugElement = inputWrapperDebugElement.query(By.css('label'));
     const inputWrapperElement = <HTMLDivElement>inputWrapperDebugElement.nativeElement;
     const inputElement = <HTMLInputElement>inputDebugElement.nativeElement;
     const labelElement = <HTMLLabelElement>labelDebugElement.nativeElement;
