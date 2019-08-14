@@ -1,13 +1,10 @@
-<div class="clr-form-control">
-  <div class="clr-control-container">
-    <ng-container *ngFor="let option of input.options; let i = index">
-      <div class="clr-radio-wrapper" [ngClass]="{ 'readonly': field.readonly }" >
-        <input class="clr-radio" [id]="id + '-' + i" type="radio" [readonly]="field.readonly" 
-          [value]="option.value" [formControl]="control" />
-        <label class="clr-control-label" [for]="id + '-' + i">{{ option.label }}</label>
-      </div>
-    </ng-container>
-  </div>
-</div>
+<clr-radio-container>
+  <label>{{ template.label }}</label>
+  <clr-radio-wrapper *ngFor="let option of input.options; let i = index">
+    <input [id]="id + '-' + i" type="radio" clrRadio [readonly]="field.readonly" 
+      [value]="option.value" [formControl]="control" />
+     <label [for]="id + '-' + i">{{ option.label }}</label>
+  </clr-radio-wrapper>
+</clr-radio-container>
 
   

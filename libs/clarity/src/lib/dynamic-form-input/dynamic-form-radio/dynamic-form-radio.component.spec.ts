@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { ClrRadioContainer, ClrRadioWrapper } from '@clr/angular';
 import { DynamicForm, DynamicFormControl, DynamicFormControlDefinition, DynamicFormDefinition,
   DynamicFormRadio } from '@dynamic-forms/core';
 import { DynamicFormRadioComponent } from './dynamic-form-radio.component';
@@ -47,9 +48,10 @@ describe('DynamicFormRadioComponent', () => {
   });
 
   it('creates component template', () => {
-    const checkDebugElements = fixture.debugElement.queryAll(By.css('div.clr-radio-wrapper'));
-    const inputDebugElements = checkDebugElements.map(elem => elem.query(By.css('input.clr-radio')));
-    const labelDebugElements = checkDebugElements.map(elem => elem.query(By.css('label.clr-control-label')));
+    const wrapperDebugElement = fixture.debugElement.query(By.directive(ClrRadioContainer));
+    const checkDebugElements = wrapperDebugElement.queryAll(By.directive(ClrRadioWrapper));
+    const inputDebugElements = checkDebugElements.map(elem => elem.query(By.css('input')));
+    const labelDebugElements = checkDebugElements.map(elem => elem.query(By.css('label')));
     const inputElements = <HTMLInputElement[]>inputDebugElements.map(elem => elem.nativeElement);
     const labelElements = <HTMLLabelElement[]>labelDebugElements.map(elem => elem.nativeElement);
 
@@ -66,9 +68,9 @@ describe('DynamicFormRadioComponent', () => {
   });
 
   it('sets dynamic form control to readonly', () => {
-    const checkDebugElements = fixture.debugElement.queryAll(By.css('div.clr-radio-wrapper'));
-    const inputDebugElements = checkDebugElements.map(elem => elem.query(By.css('input.clr-radio')));
-    const checkElements = <HTMLDivElement[]>checkDebugElements.map(elem => elem.nativeElement);
+    const wrapperDebugElement = fixture.debugElement.query(By.directive(ClrRadioContainer));
+    const checkDebugElements = wrapperDebugElement.queryAll(By.directive(ClrRadioWrapper));
+    const inputDebugElements = checkDebugElements.map(elem => elem.query(By.css('input')));
     const inputElements = <HTMLInputElement[]>inputDebugElements.map(elem => elem.nativeElement);
 
     expect(inputElements[0].readOnly).not.toBe(true);
