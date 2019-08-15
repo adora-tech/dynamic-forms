@@ -1,0 +1,42 @@
+/*$clr-baseline: 48px !default;
+$clr-font-base-size: 24 !default; // Moved from original needs a better name
+$clr-rem-denominator: $clr-font-base-size !default; 
+
+$clr-baseline-px: 48px !default;
+$clr-baseline-int: $clr-baseline-px / 1px;
+
+$clr-forms-baseline: 1rem;
+$clr-forms-icon-size: 4rem;
+
+$clr-typography-smalltext: 13px; // 0.541667rem !default; // 13px
+$clr-typography-xsmalltext: 12px; // 0.5rem !default; // 12px
+$clr-typography-xxsmalltext: 11px; // 0.458333rem !default; // 11px
+$clr-typography-tinytext: 10px; // 0.416667rem !default; // 10px*/
+
+// Variables  
+@import '../../../../../../node_modules/@clr/ui/src/color/variables.color';
+@import '../../../../../../node_modules/@clr/ui/src/utils/variables.global';
+@import '../../../../../../node_modules/@clr/ui/src/typography/variables.typography';
+
+@import '../../../../../../node_modules/@clr/ui/src/emphasis/alert/variables.alert';
+
+@import '../../../../../../node_modules/@clr/ui/src/button/variables.button';
+
+@import '../../../../../../node_modules/@clr/ui/src/popover/dropdown/variables.dropdown';
+
+@import '../../../../../../node_modules/@clr/ui/src/forms/styles/variables.forms';
+@import '../../../../../../node_modules/@clr/ui/src/button/variables.toggles';
+@import '../../../../../../node_modules/@clr/ui/src/forms/datepicker/variables.datepicker';
+@import '../../../../../../node_modules/@clr/ui/src/forms/combobox/variables.combobox';
+
+// Grid and Layout Utility Dependencies
+@import '../../../../../../node_modules/@clr/ui/src/layout/grid/variables/variables.clarity';
+@import '../../../../../../node_modules/@clr/ui/src/layout/grid/mixins/breakpoint.clarity';
+@import '../../../../../../node_modules/@clr/ui/src/layout/grid/mixins/grid.clarity';
+@import '../../../../../../node_modules/@clr/ui/src/layout/grid/mixins/grid-framework.clarity';
+@import '../../../../../../node_modules/@clr/ui/src/layout/grid/utilities/align.clarity';
+@import '../../../../../../node_modules/@clr/ui/src/layout/grid/utilities/clearfix.clarity';
+@import '../../../../../../node_modules/@clr/ui/src/layout/grid/utilities/display.clarity';
+@import '../../../../../../node_modules/@clr/ui/src/layout/grid/utilities/flex.clarity';
+@import '../../../../../../node_modules/@clr/ui/src/layout/grid/utilities/float.clarity';
+@import '../../../../../../node_modules/@clr/ui/src/layout/grid/utilities/visibility.clarity';
