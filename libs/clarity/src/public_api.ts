@@ -2,5 +2,5 @@
  * Public API Surface of material
  */
 
-export * from './lib/dynamic-forms-clarity.config';
-export * from './lib/dynamic-forms-clarity.module';
+export * from './lib/dynamic-forms.config';
+export * from './lib/dynamic-forms.module';

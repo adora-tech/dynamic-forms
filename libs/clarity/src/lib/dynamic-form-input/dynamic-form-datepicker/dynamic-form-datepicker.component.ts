@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { DynamicFormDatepicker } from '@dynamic-forms/core';
-import { ClrDynamicFormInputComponent } from '../clr-dynamic-form-input.component';
+import { DynamicFormDatepicker, DynamicFormInputComponent } from '@dynamic-forms/core';
 
 @Component({
   selector: 'clr-dynamic-form-datepicker',
   templateUrl: './dynamic-form-datepicker.component.html'
 })
-export class DynamicFormDatepickerComponent extends ClrDynamicFormInputComponent<DynamicFormDatepicker> {}
+export class DynamicFormDatepickerComponent extends DynamicFormInputComponent<DynamicFormDatepicker> {}

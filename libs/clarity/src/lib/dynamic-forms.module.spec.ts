@@ -1,9 +1,10 @@
 import { async, inject, TestBed } from '@angular/core/testing';
 import { DynamicFormBuilder, DynamicFormComponentFactory, DynamicFormConfig, DynamicFormConfigService,
   DynamicFormExpressionBuilder, DynamicFormValidationBuilder, DynamicFormValidationService,
-  DYNAMIC_FORM_CONFIG } from '@dynamic-forms/core';
-import { clrDynamicFormConfig } from './dynamic-forms-clarity.config';
-import { ClrDynamicFormsModule } from './dynamic-forms-clarity.module';
+  DYNAMIC_FORM_CONFIG,
+  DYNAMIC_FORM_LIBRARY} from '@dynamic-forms/core';
+import { clrDynamicFormConfig } from './dynamic-forms.config';
+import { ClrDynamicFormsModule } from './dynamic-forms.module';
 
 describe('ClrDynamicFormsModule', () => {
   describe('without providers', () => {
@@ -14,6 +15,10 @@ describe('ClrDynamicFormsModule', () => {
         ]
       }).compileComponents();
     }));
+
+    it('does not provide DYNAMIC_FORM_LIBRARY', () => {
+      expect(() => TestBed.get(DYNAMIC_FORM_LIBRARY)).toThrowError(/StaticInjectorError/);
+    });
 
     it('does not provide DYNAMIC_FORM_CONFIG', () => {
       expect(() => TestBed.get(DYNAMIC_FORM_CONFIG)).toThrowError(/StaticInjectorError/);
@@ -44,7 +49,7 @@ describe('ClrDynamicFormsModule', () => {
     });
   });
 
-  describe('forRoot with defaultconfig', () => {
+  describe('forRoot with default config', () => {
     beforeEach(async(() => {
       TestBed.configureTestingModule({
         imports: [
@@ -52,6 +57,12 @@ describe('ClrDynamicFormsModule', () => {
         ]
       }).compileComponents();
     }));
+
+    it('provides DYNAMIC_FORM_LIBRARY',
+      inject([DYNAMIC_FORM_LIBRARY], (library: string) => {
+        expect(library).toBe('clarity');
+      })
+    );
 
     it('provides DYNAMIC_FORM_CONFIG',
       inject([DYNAMIC_FORM_CONFIG], (configs: DynamicFormConfig[]) => {
@@ -99,7 +110,7 @@ describe('ClrDynamicFormsModule', () => {
 
   describe('forRoot with provided config', () => {
     const config: DynamicFormConfig = {
-      module: 'clarity'
+      library: 'clarity-extended'
     };
 
     beforeEach(async(() => {
@@ -109,6 +120,12 @@ describe('ClrDynamicFormsModule', () => {
         ]
       }).compileComponents();
     }));
+
+    it('provide DYNAMIC_FORM_LIBRARY',
+      inject([DYNAMIC_FORM_LIBRARY], (library: string) => {
+        expect(library).toBe('clarity-extended');
+      })
+    );
 
     it('provides DYNAMIC_FORM_CONFIG',
       inject([DYNAMIC_FORM_CONFIG], (configs: DynamicFormConfig[]) => {

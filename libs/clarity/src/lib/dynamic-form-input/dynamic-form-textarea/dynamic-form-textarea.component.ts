@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { DynamicFormTextarea } from '@dynamic-forms/core';
-import { ClrDynamicFormInputComponent } from '../clr-dynamic-form-input.component';
+import { DynamicFormInputComponent, DynamicFormTextarea } from '@dynamic-forms/core';
 
 @Component({
   selector: 'clr-dynamic-form-textarea',
   templateUrl: './dynamic-form-textarea.component.html'
 })
-export class DynamicFormTextareaComponent extends ClrDynamicFormInputComponent<DynamicFormTextarea> {}
+export class DynamicFormTextareaComponent extends DynamicFormInputComponent<DynamicFormTextarea> {}

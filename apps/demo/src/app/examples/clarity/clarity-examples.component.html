@@ -1,7 +1,7 @@
 <ng-container *ngIf="data$ | async as data">
   <mat-tab-group>
     <mat-tab label="Form">
-      <clr-dynamic-form #dynamicForm [definition]="data.definition" [model]="data.model" (formSubmit)="onFormSubmit($event)">
+      <dynamic-form #dynamicForm [definition]="data.definition" [model]="data.model" (formSubmit)="onFormSubmit($event)">
         <div class="dynamic-form-actions">
           <button class="btn btn-primary" type="button" (click)="dynamicForm.validate()">
             Validate
@@ -13,7 +13,7 @@
             Submit          
           </button>  
         </div> 
-      </clr-dynamic-form>  
+      </dynamic-form>  
     </mat-tab>
     <mat-tab label="Definition"> 
       <pre>{{ data.definition | json }}</pre>
