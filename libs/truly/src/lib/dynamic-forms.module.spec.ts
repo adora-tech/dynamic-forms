@@ -1,9 +1,10 @@
 import { async, inject, TestBed } from '@angular/core/testing';
 import { DynamicFormBuilder, DynamicFormComponentFactory, DynamicFormConfig, DynamicFormConfigService,
   DynamicFormExpressionBuilder, DynamicFormValidationBuilder, DynamicFormValidationService,
-  DYNAMIC_FORM_CONFIG } from '@dynamic-forms/core';
-import { tlDynamicFormConfig } from './dynamic-forms-truly.config';
-import { TlDynamicFormsModule } from './dynamic-forms-truly.module';
+  DYNAMIC_FORM_CONFIG,
+  DYNAMIC_FORM_LIBRARY} from '@dynamic-forms/core';
+import { tlDynamicFormConfig } from './dynamic-forms.config';
+import { TlDynamicFormsModule } from './dynamic-forms.module';
 
 describe('TlDynamicFormsModule', () => {
   describe('without providers', () => {
@@ -14,6 +15,10 @@ describe('TlDynamicFormsModule', () => {
         ]
       }).compileComponents();
     }));
+
+    it('does not provide DYNAMIC_FORM_LIBRARY', () => {
+      expect(() => TestBed.get(DYNAMIC_FORM_LIBRARY)).toThrowError(/StaticInjectorError/);
+    });
 
     it('does not provide DYNAMIC_FORM_CONFIG', () => {
       expect(() => TestBed.get(DYNAMIC_FORM_CONFIG)).toThrowError(/StaticInjectorError/);
@@ -44,7 +49,7 @@ describe('TlDynamicFormsModule', () => {
     });
   });
 
-  describe('forRoot with defaultconfig', () => {
+  describe('forRoot with default config', () => {
     beforeEach(async(() => {
       TestBed.configureTestingModule({
         imports: [
@@ -52,6 +57,12 @@ describe('TlDynamicFormsModule', () => {
         ]
       }).compileComponents();
     }));
+
+    it('provides DYNAMIC_FORM_LIBRARY',
+      inject([DYNAMIC_FORM_LIBRARY], (library: string) => {
+        expect(library).toBe('truly');
+      })
+    );
 
     it('provides DYNAMIC_FORM_CONFIG',
       inject([DYNAMIC_FORM_CONFIG], (configs: DynamicFormConfig[]) => {
@@ -99,7 +110,7 @@ describe('TlDynamicFormsModule', () => {
 
   describe('forRoot with provided config', () => {
     const config: DynamicFormConfig = {
-      module: 'truly'
+      library: 'truly-extended'
     };
 
     beforeEach(async(() => {
@@ -109,6 +120,12 @@ describe('TlDynamicFormsModule', () => {
         ]
       }).compileComponents();
     }));
+
+    it('provides DYNAMIC_FORM_LIBRARY',
+      inject([DYNAMIC_FORM_LIBRARY], (library: string) => {
+        expect(library).toBe('truly-extended');
+      })
+    );
 
     it('provides DYNAMIC_FORM_CONFIG',
       inject([DYNAMIC_FORM_CONFIG], (configs: DynamicFormConfig[]) => {
