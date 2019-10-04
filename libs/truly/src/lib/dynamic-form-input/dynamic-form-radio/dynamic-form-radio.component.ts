@@ -1,8 +1,13 @@
 import { Component } from '@angular/core';
-import { DynamicFormInputComponent, DynamicFormRadio } from '@dynamic-forms/core';
+import { DynamicFormInputComponent, DynamicFormRadio, DynamicFormValidationService } from '@dynamic-forms/core';
 
 @Component({
   selector: 'tl-dynamic-form-radio',
   templateUrl: './dynamic-form-radio.component.html'
 })
-export class DynamicFormRadioComponent extends DynamicFormInputComponent<DynamicFormRadio> {}
+export class DynamicFormRadioComponent extends DynamicFormInputComponent<DynamicFormRadio> {
+  constructor(protected validationService: DynamicFormValidationService) {
+    super(validationService);
+  }
+}
+
