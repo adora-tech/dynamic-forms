@@ -2,9 +2,9 @@
   "name": "@dynamic-forms/clarity",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "~8.0.3",
-    "@angular/core": "~8.0.3",
-    "@angular/forms": "~8.0.3",
-    "@clr/angular": "^2.0.1"
+    "@angular/common": "~8.2.13",
+    "@angular/core": "~8.2.13",
+    "@angular/forms": "~8.2.13",
+    "@clr/angular": "^2.3.1"
   }
 }
