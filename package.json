@@ -59,8 +59,8 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.3",
     "string-format": "^2.0.0",
-    "truly-ui": "^4.3.0",
-    "ts-md5": "^1.2.6",
+    "truly-ui": "^4.4.0",
+    "ts-md5": "^1.2.7",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
