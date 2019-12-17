@@ -3,6 +3,7 @@ import { clrDynamicFormInputConfig } from './dynamic-form-input/dynamic-form-inp
 
 export const clrDynamicFormConfig: DynamicFormConfig = {
   library: 'clarity',
+  elementConfig: dynamicFormConfig.elementConfig,
   fieldConfig: dynamicFormConfig.fieldConfig,
   inputConfig: clrDynamicFormInputConfig,
   wrapperConfig: dynamicFormConfig.wrapperConfig,
