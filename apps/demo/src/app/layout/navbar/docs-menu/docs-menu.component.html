@@ -7,6 +7,7 @@
   <a mat-menu-item routerLink="/docs/core" [matMenuTriggerFor]="coreDocs">Core</a>
   <a mat-menu-item routerLink="/docs/bootstrap" [matMenuTriggerFor]="bootstrapDocs">Bootstrap</a>
   <a mat-menu-item routerLink="/docs/material" [matMenuTriggerFor]="materialDocs">Material</a>
+  <a mat-menu-item routerLink="/docs/nebular" [matMenuTriggerFor]="nebularDocs">Nebular</a>
 </mat-menu>
 
 <mat-menu #coreDocs="matMenu">
@@ -19,4 +20,8 @@
 
 <mat-menu #materialDocs="matMenu">
   <app-docs-menu-items [library]="'material'"></app-docs-menu-items>
+</mat-menu>
+
+<mat-menu #nebularDocs="matMenu">
+  <app-docs-menu-items [library]="'nebular'"></app-docs-menu-items>
 </mat-menu>

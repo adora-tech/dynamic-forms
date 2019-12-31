@@ -7,11 +7,15 @@
   <mat-menu #examples="matMenu">
     <button mat-menu-item [matMenuTriggerFor]="boostrapMenuPanel.menu">Bootstrap</button>
     <button mat-menu-item [matMenuTriggerFor]="materialMenuPanel.menu">Material</button>
+    <button mat-menu-item [matMenuTriggerFor]="nebularMenuPanel.menu">Nebular</button>
   </mat-menu>
 
   <app-examples-menu-panel #boostrapMenuPanel [baseUrl]="'/examples/bootstrap'" [items]="items">
   </app-examples-menu-panel>
 
   <app-examples-menu-panel #materialMenuPanel [baseUrl]="'/examples/material'" [items]="items">
+  </app-examples-menu-panel>
+
+  <app-examples-menu-panel #nebularMenuPanel [baseUrl]="'/examples/nebular'" [items]="items">
   </app-examples-menu-panel>
 </ng-container>

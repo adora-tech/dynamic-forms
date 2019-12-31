@@ -4,6 +4,7 @@ import { CoreDocsModule } from './core/core-docs.module';
 import { DocsRoutingModule } from './docs-routing.module';
 import { DocsComponent } from './docs.component';
 import { MaterialDocsModule } from './material/material-docs.module';
+import { NebularDocsModule } from './nebular/nebular-docs.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { MaterialDocsModule } from './material/material-docs.module';
     DocsRoutingModule,
     CoreDocsModule,
     BootstrapDocsModule,
-    MaterialDocsModule
+    MaterialDocsModule,
+    NebularDocsModule
   ]
 })
 export class DocsModule {}

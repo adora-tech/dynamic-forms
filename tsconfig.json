@@ -36,6 +36,12 @@
       ],
       "@dynamic-forms/material/*": [
         "dist/@dynamic-forms/material/*"
+      ],
+      "@dynamic-forms/nebular": [
+        "dist/@dynamic-forms/nebular"
+      ],
+      "@dynamic-forms/nebular/*": [
+        "dist/@dynamic-forms/nebular/*"
       ]
     }
   },

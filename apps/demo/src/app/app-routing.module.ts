@@ -14,6 +14,10 @@ export const appRoutes: Routes = [
   {
     path: 'examples/material',
     loadChildren: () => import('./examples/material/material-examples.module').then(m => m.MaterialExamplesModule)
+  },
+  {
+    path: 'examples/nebular',
+    loadChildren: () => import('./examples/nebular/nebular-examples.module').then(m => m.NebularExamplesModule)
   }
 ];
 

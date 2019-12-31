@@ -36,6 +36,12 @@
       ],
       "@dynamic-forms/material/*": [
         "libs/material/src/lib/*"
+      ],
+      "@dynamic-forms/nebular": [
+        "libs/nebular/src/public_api"
+      ],
+      "@dynamic-forms/nebular/*": [
+        "libs/nebular/src/lib/*"
       ]
     }
   },
