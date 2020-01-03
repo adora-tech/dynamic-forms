@@ -1,18 +1,18 @@
 <ng-container *ngIf="data$ | async as data">
   <mat-tab-group>
     <mat-tab label="Form">
-      <dynamic-form #dynamicForm [definition]="data.definition" [model]="data.model" (formSubmit)="onFormSubmit($event)">
+      <dynamic-form class="nb-theme-default" #dynamicForm [definition]="data.definition" [model]="data.model" (formSubmit)="onFormSubmit($event)">
         <div class="dynamic-form-actions">
-          <button mat-flat-button type="submit" color="primary" [disabled]="!dynamicForm.formGroup.valid">
+          <button nbButton type="submit" status="primary" [disabled]="!dynamicForm.formGroup.valid">
             Submit          
           </button>   
-          <button mat-flat-button type="button" color="primary" (click)="dynamicForm.validate()">
+          <button nbButton type="button" status="primary" (click)="dynamicForm.validate()">
             Validate
           </button>
-          <button mat-flat-button type="reset" color="primary" (click)="dynamicForm.reset()">
+          <button nbButton type="reset" status="primary"(click)="dynamicForm.reset()">
             Reset
           </button> 
-          <button mat-flat-button type="button" color="primary" (click)="dynamicForm.resetDefault()">
+          <button nbButton type="button" status="primary" (click)="dynamicForm.resetDefault()">
             Reset default
           </button>
         </div>

@@ -1,4 +1,6 @@
 :host ::ng-deep {
+  @import '../../../../../../node_modules/@nebular/theme/styles/prebuilt/default';
+
   .dynamic-form-wrapper {
     width: 100%;
     max-width: 800px;
