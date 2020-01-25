@@ -2,15 +2,15 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatSelect } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { DynamicForm, DynamicFormConfig, DynamicFormConfigService, DynamicFormControl,
+import { DynamicForm, DynamicFormConfigService, DynamicFormControl,
   DynamicFormControlDefinition, DynamicFormDefinition, DynamicFormSelect,
   DynamicFormValidationService } from '@dynamic-forms/core';
-import { DynamicFormSelectComponent } from './dynamic-form-select.component';
-import { DynamicFormSelectModule } from './dynamic-form-select.module';
+import { NbDynamicFormSelectComponent } from './dynamic-form-select.component';
+import { NbDynamicFormSelectModule } from './dynamic-form-select.module';
 
-describe('DynamicFormSelectComponent', () => {
-  let fixture: ComponentFixture<DynamicFormSelectComponent>;
-  let component: DynamicFormSelectComponent;
+describe('NbDynamicFormSelectComponent', () => {
+  let fixture: ComponentFixture<NbDynamicFormSelectComponent>;
+  let component: NbDynamicFormSelectComponent;
   let form: DynamicForm;
   let definition: DynamicFormControlDefinition<DynamicFormSelect>;
   let formControl: DynamicFormControl<DynamicFormSelect>;
@@ -18,19 +18,19 @@ describe('DynamicFormSelectComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        DynamicFormSelectModule,
+        NbDynamicFormSelectModule,
         NoopAnimationsModule
       ],
       providers: [
         {
           provide: DynamicFormConfigService,
-          useValue: new DynamicFormConfigService(<DynamicFormConfig>{})
+          useValue: new DynamicFormConfigService({ name: 'test' })
         },
         DynamicFormValidationService
       ]
     });
 
-    fixture = TestBed.createComponent(DynamicFormSelectComponent);
+    fixture = TestBed.createComponent(NbDynamicFormSelectComponent);
     component = fixture.componentInstance;
 
     form = new DynamicForm(<DynamicFormDefinition>{}, {});

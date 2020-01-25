@@ -1,15 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { DynamicForm, DynamicFormConfig, DynamicFormConfigService, DynamicFormControl,
+import { DynamicForm, DynamicFormConfigService, DynamicFormControl,
   DynamicFormControlDefinition, DynamicFormDefinition, DynamicFormTextbox,
   DynamicFormValidationService } from '@dynamic-forms/core';
-import { DynamicFormTextboxComponent } from './dynamic-form-textbox.component';
-import { DynamicFormTextboxModule } from './dynamic-form-textbox.module';
+import { NbDynamicFormTextboxComponent } from './dynamic-form-textbox.component';
+import { NbDynamicFormTextboxModule } from './dynamic-form-textbox.module';
 
-describe('DynamicFormTextboxComponent', () => {
-  let fixture: ComponentFixture<DynamicFormTextboxComponent>;
-  let component: DynamicFormTextboxComponent;
+describe('NbDynamicFormTextboxComponent', () => {
+  let fixture: ComponentFixture<NbDynamicFormTextboxComponent>;
+  let component: NbDynamicFormTextboxComponent;
   let form: DynamicForm;
   let definition: DynamicFormControlDefinition<DynamicFormTextbox>;
   let formControl: DynamicFormControl<DynamicFormTextbox>;
@@ -17,19 +17,19 @@ describe('DynamicFormTextboxComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        DynamicFormTextboxModule,
+        NbDynamicFormTextboxModule,
         NoopAnimationsModule
       ],
       providers: [
         {
           provide: DynamicFormConfigService,
-          useValue: new DynamicFormConfigService(<DynamicFormConfig>{})
+          useValue: new DynamicFormConfigService({ name: 'test' })
         },
         DynamicFormValidationService
       ]
     });
 
-    fixture = TestBed.createComponent(DynamicFormTextboxComponent);
+    fixture = TestBed.createComponent(NbDynamicFormTextboxComponent);
     component = fixture.componentInstance;
 
     form = new DynamicForm(<DynamicFormDefinition>{}, {});

@@ -2,15 +2,15 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatAutocomplete } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { DynamicForm, DynamicFormCombobox, DynamicFormConfig, DynamicFormConfigService,
+import { DynamicForm, DynamicFormCombobox, DynamicFormConfigService,
   DynamicFormControl, DynamicFormControlDefinition, DynamicFormDefinition,
   DynamicFormValidationService } from '@dynamic-forms/core';
-import { DynamicFormComboboxComponent } from './dynamic-form-combobox.component';
-import { DynamicFormComboboxModule } from './dynamic-form-combobox.module';
+import { NbDynamicFormComboboxComponent } from './dynamic-form-combobox.component';
+import { NbDynamicFormComboboxModule } from './dynamic-form-combobox.module';
 
-describe('DynamicFormComboboxComponent', () => {
-  let fixture: ComponentFixture<DynamicFormComboboxComponent>;
-  let component: DynamicFormComboboxComponent;
+describe('NbDynamicFormComboboxComponent', () => {
+  let fixture: ComponentFixture<NbDynamicFormComboboxComponent>;
+  let component: NbDynamicFormComboboxComponent;
   let form: DynamicForm;
   let definition: DynamicFormControlDefinition<DynamicFormCombobox>;
   let formControl: DynamicFormControl<DynamicFormCombobox>;
@@ -18,19 +18,19 @@ describe('DynamicFormComboboxComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        DynamicFormComboboxModule,
+        NbDynamicFormComboboxModule,
         NoopAnimationsModule
       ],
       providers: [
         {
           provide: DynamicFormConfigService,
-          useValue: new DynamicFormConfigService(<DynamicFormConfig>{})
+          useValue: new DynamicFormConfigService({ name: 'test' })
         },
         DynamicFormValidationService
       ]
     });
 
-    fixture = TestBed.createComponent(DynamicFormComboboxComponent);
+    fixture = TestBed.createComponent(NbDynamicFormComboboxComponent);
     component = fixture.componentInstance;
 
     form = new DynamicForm(<DynamicFormDefinition>{}, {});

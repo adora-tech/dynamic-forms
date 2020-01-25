@@ -5,7 +5,7 @@ import { DynamicFormInputBase, DynamicFormTextarea, DynamicFormValidationService
   selector: 'nb-dynamic-form-textarea',
   templateUrl: './dynamic-form-textarea.component.html'
 })
-export class DynamicFormTextareaComponent extends DynamicFormInputBase<DynamicFormTextarea> {
+export class NbDynamicFormTextareaComponent extends DynamicFormInputBase<DynamicFormTextarea> {
   constructor(protected validationService: DynamicFormValidationService) {
     super(validationService);
   }

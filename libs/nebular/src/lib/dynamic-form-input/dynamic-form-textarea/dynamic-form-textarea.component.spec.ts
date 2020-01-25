@@ -1,15 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { DynamicForm, DynamicFormConfig, DynamicFormConfigService, DynamicFormControl,
+import { DynamicForm, DynamicFormConfigService, DynamicFormControl,
   DynamicFormControlDefinition, DynamicFormDefinition, DynamicFormTextarea,
   DynamicFormValidationService } from '@dynamic-forms/core';
-import { DynamicFormTextareaComponent } from './dynamic-form-textarea.component';
-import { DynamicFormTextareaModule } from './dynamic-form-textarea.module';
+import { NbDynamicFormTextareaComponent } from './dynamic-form-textarea.component';
+import { NbDynamicFormTextareaModule } from './dynamic-form-textarea.module';
 
-describe('DynamicFormTextareaComponent', () => {
-  let fixture: ComponentFixture<DynamicFormTextareaComponent>;
-  let component: DynamicFormTextareaComponent;
+describe('NbDynamicFormTextareaComponent', () => {
+  let fixture: ComponentFixture<NbDynamicFormTextareaComponent>;
+  let component: NbDynamicFormTextareaComponent;
   let form: DynamicForm;
   let definition: DynamicFormControlDefinition<DynamicFormTextarea>;
   let formControl: DynamicFormControl<DynamicFormTextarea>;
@@ -17,19 +17,19 @@ describe('DynamicFormTextareaComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        DynamicFormTextareaModule,
+        NbDynamicFormTextareaModule,
         NoopAnimationsModule
       ],
       providers: [
         {
           provide: DynamicFormConfigService,
-          useValue: new DynamicFormConfigService(<DynamicFormConfig>{})
+          useValue: new DynamicFormConfigService({ name: 'test' })
         },
         DynamicFormValidationService
       ]
     });
 
-    fixture = TestBed.createComponent(DynamicFormTextareaComponent);
+    fixture = TestBed.createComponent(NbDynamicFormTextareaComponent);
     component = fixture.componentInstance;
 
     form = new DynamicForm(<DynamicFormDefinition>{}, {});

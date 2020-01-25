@@ -1,18 +1,31 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DynamicFormTextboxComponent } from './dynamic-form-textbox.component';
+import { DynamicFormConfigModule, DynamicFormInputType } from '@dynamic-forms/core';
+import { nbDynamicFormLibrary } from '../../dynamic-form-config/dynamic-form-library';
+import { NbDynamicFormTextboxComponent } from './dynamic-form-textbox.component';
+
+export const nbDynamicFormTextboxType: DynamicFormInputType = {
+  type: 'textbox',
+  component: NbDynamicFormTextboxComponent,
+  libraryName: nbDynamicFormLibrary.name
+};
 
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DynamicFormConfigModule.withInput(nbDynamicFormTextboxType)
   ],
   declarations: [
-    DynamicFormTextboxComponent
+    NbDynamicFormTextboxComponent
+  ],
+  exports: [
+    NbDynamicFormTextboxComponent,
+    DynamicFormConfigModule
   ],
   entryComponents: [
-    DynamicFormTextboxComponent
+    NbDynamicFormTextboxComponent
   ]
 })
-export class DynamicFormTextboxModule {}
+export class NbDynamicFormTextboxModule {}

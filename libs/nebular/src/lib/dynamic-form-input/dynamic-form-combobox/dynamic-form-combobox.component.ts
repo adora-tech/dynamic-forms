@@ -7,7 +7,7 @@ import { map, startWith } from 'rxjs/operators';
   selector: 'nb-dynamic-form-combobox',
   templateUrl: './dynamic-form-combobox.component.html'
 })
-export class DynamicFormComboboxComponent extends DynamicFormInputBase<DynamicFormCombobox> implements OnInit {
+export class NbDynamicFormComboboxComponent extends DynamicFormInputBase<DynamicFormCombobox> implements OnInit {
   filteredOptions: Observable<string[]>;
 
   constructor(protected validationService: DynamicFormValidationService) {

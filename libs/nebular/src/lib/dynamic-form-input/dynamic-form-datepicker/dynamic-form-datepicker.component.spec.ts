@@ -1,15 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { DynamicForm, DynamicFormConfig, DynamicFormConfigService, DynamicFormControl,
+import { DynamicForm, DynamicFormConfigService, DynamicFormControl,
   DynamicFormControlDefinition, DynamicFormDatepicker, DynamicFormDefinition,
   DynamicFormValidationService } from '@dynamic-forms/core';
-import { DynamicFormDatepickerComponent } from './dynamic-form-datepicker.component';
-import { DynamicFormDatepickerModule } from './dynamic-form-datepicker.module';
+import { NbDynamicFormDatepickerComponent } from './dynamic-form-datepicker.component';
+import { NbDynamicFormDatepickerModule } from './dynamic-form-datepicker.module';
 
-describe('DynamicFormDatepickerComponent', () => {
-  let fixture: ComponentFixture<DynamicFormDatepickerComponent>;
-  let component: DynamicFormDatepickerComponent;
+describe('NbDynamicFormDatepickerComponent', () => {
+  let fixture: ComponentFixture<NbDynamicFormDatepickerComponent>;
+  let component: NbDynamicFormDatepickerComponent;
   let form: DynamicForm;
   let definition: DynamicFormControlDefinition<DynamicFormDatepicker>;
   let formControl: DynamicFormControl<DynamicFormDatepicker>;
@@ -17,19 +17,19 @@ describe('DynamicFormDatepickerComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        DynamicFormDatepickerModule,
+        NbDynamicFormDatepickerModule,
         NoopAnimationsModule
       ],
       providers: [
         {
           provide: DynamicFormConfigService,
-          useValue: new DynamicFormConfigService(<DynamicFormConfig>{})
+          useValue: new DynamicFormConfigService({ name: 'test' })
         },
         DynamicFormValidationService
       ]
     });
 
-    fixture = TestBed.createComponent(DynamicFormDatepickerComponent);
+    fixture = TestBed.createComponent(NbDynamicFormDatepickerComponent);
     component = fixture.componentInstance;
 
     form = new DynamicForm(<DynamicFormDefinition>{}, {});
