@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InputModule } from 'truly-ui';
-import { DynamicFormNumberboxComponent } from './dynamic-form-numberbox.component';
+import { TlDynamicFormNumberboxComponent } from './dynamic-form-numberbox.component';
 
 @NgModule({
   imports: [
@@ -11,10 +11,10 @@ import { DynamicFormNumberboxComponent } from './dynamic-form-numberbox.componen
     InputModule
   ],
   declarations: [
-    DynamicFormNumberboxComponent
+    TlDynamicFormNumberboxComponent
   ],
   entryComponents: [
-    DynamicFormNumberboxComponent
+    TlDynamicFormNumberboxComponent
   ]
 })
-export class DynamicFormNumberboxModule {}
+export class TlDynamicFormNumberboxModule {}

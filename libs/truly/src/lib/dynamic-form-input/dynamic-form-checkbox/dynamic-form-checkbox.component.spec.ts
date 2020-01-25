@@ -1,14 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DynamicForm, DynamicFormCheckbox, DynamicFormConfig, DynamicFormConfigService,
+import { DynamicForm, DynamicFormCheckbox, DynamicFormConfigService,
   DynamicFormControl, DynamicFormControlDefinition, DynamicFormDefinition,
   DynamicFormValidationService } from '@dynamic-forms/core';
-import { DynamicFormCheckboxComponent } from './dynamic-form-checkbox.component';
-import { DynamicFormCheckboxModule } from './dynamic-form-checkbox.module';
+import { TlDynamicFormCheckboxComponent } from './dynamic-form-checkbox.component';
+import { TlDynamicFormCheckboxModule } from './dynamic-form-checkbox.module';
 
-describe('DynamicFormCheckboxComponent', () => {
-  let fixture: ComponentFixture<DynamicFormCheckboxComponent>;
-  let component: DynamicFormCheckboxComponent;
+describe('TlDynamicFormCheckboxComponent', () => {
+  let fixture: ComponentFixture<TlDynamicFormCheckboxComponent>;
+  let component: TlDynamicFormCheckboxComponent;
   let form: DynamicForm;
   let definition: DynamicFormControlDefinition<DynamicFormCheckbox>;
   let formControl: DynamicFormControl<DynamicFormCheckbox>;
@@ -16,18 +16,18 @@ describe('DynamicFormCheckboxComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        DynamicFormCheckboxModule
+        TlDynamicFormCheckboxModule
       ],
       providers: [
         {
           provide: DynamicFormConfigService,
-          useValue: new DynamicFormConfigService(<DynamicFormConfig>{})
+          useValue: new DynamicFormConfigService({ name: 'test' })
         },
         DynamicFormValidationService
       ]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DynamicFormCheckboxComponent);
+    fixture = TestBed.createComponent(TlDynamicFormCheckboxComponent);
     component = fixture.componentInstance;
 
     form = new DynamicForm(<DynamicFormDefinition>{}, {});

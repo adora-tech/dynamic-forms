@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DatePickerModule } from 'truly-ui';
-import { DynamicFormDatepickerComponent } from './dynamic-form-datepicker.component';
+import { TlDynamicFormDatepickerComponent } from './dynamic-form-datepicker.component';
 
 @NgModule({
   imports: [
@@ -11,10 +11,10 @@ import { DynamicFormDatepickerComponent } from './dynamic-form-datepicker.compon
     DatePickerModule
   ],
   declarations: [
-    DynamicFormDatepickerComponent
+    TlDynamicFormDatepickerComponent
   ],
   entryComponents: [
-    DynamicFormDatepickerComponent
+    TlDynamicFormDatepickerComponent
   ]
 })
-export class DynamicFormDatepickerModule {}
+export class TlDynamicFormDatepickerModule {}

@@ -5,7 +5,7 @@ import { DynamicFormInputBase, DynamicFormRadio, DynamicFormValidationService } 
   selector: 'tl-dynamic-form-radio',
   templateUrl: './dynamic-form-radio.component.html'
 })
-export class DynamicFormRadioComponent extends DynamicFormInputBase<DynamicFormRadio> {
+export class TlDynamicFormRadioComponent extends DynamicFormInputBase<DynamicFormRadio> {
   constructor(protected validationService: DynamicFormValidationService) {
     super(validationService);
   }

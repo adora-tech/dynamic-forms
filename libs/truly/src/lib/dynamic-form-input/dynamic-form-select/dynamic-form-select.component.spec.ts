@@ -1,14 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DynamicForm, DynamicFormConfig, DynamicFormConfigService, DynamicFormControl,
+import { DynamicForm, DynamicFormConfigService, DynamicFormControl,
   DynamicFormControlDefinition, DynamicFormDefinition, DynamicFormSelect,
   DynamicFormValidationService } from '@dynamic-forms/core';
-import { DynamicFormSelectComponent } from './dynamic-form-select.component';
-import { DynamicFormSelectModule } from './dynamic-form-select.module';
+import { TlDynamicFormSelectComponent } from './dynamic-form-select.component';
+import { TlDynamicFormSelectModule } from './dynamic-form-select.module';
 
-describe('DynamicFormSelectComponent', () => {
-  let fixture: ComponentFixture<DynamicFormSelectComponent>;
-  let component: DynamicFormSelectComponent;
+describe('TlDynamicFormSelectComponent', () => {
+  let fixture: ComponentFixture<TlDynamicFormSelectComponent>;
+  let component: TlDynamicFormSelectComponent;
   let form: DynamicForm;
   let definition: DynamicFormControlDefinition<DynamicFormSelect>;
   let formControl: DynamicFormControl<DynamicFormSelect>;
@@ -16,18 +16,18 @@ describe('DynamicFormSelectComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        DynamicFormSelectModule
+        TlDynamicFormSelectModule
       ],
       providers: [
         {
           provide: DynamicFormConfigService,
-          useValue: new DynamicFormConfigService(<DynamicFormConfig>{})
+          useValue: new DynamicFormConfigService({ name: 'test' })
         },
         DynamicFormValidationService
       ]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DynamicFormSelectComponent);
+    fixture = TestBed.createComponent(TlDynamicFormSelectComponent);
     component = fixture.componentInstance;
 
     form = new DynamicForm(<DynamicFormDefinition>{}, {});

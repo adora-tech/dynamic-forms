@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TextareaModule } from 'truly-ui';
-import { DynamicFormTextareaComponent } from './dynamic-form-textarea.component';
+import { TlDynamicFormTextareaComponent } from './dynamic-form-textarea.component';
 
 @NgModule({
   imports: [
@@ -11,10 +11,10 @@ import { DynamicFormTextareaComponent } from './dynamic-form-textarea.component'
     TextareaModule
   ],
   declarations: [
-    DynamicFormTextareaComponent
+    TlDynamicFormTextareaComponent
   ],
   entryComponents: [
-    DynamicFormTextareaComponent
+    TlDynamicFormTextareaComponent
   ]
 })
-export class DynamicFormTextareaModule {}
+export class TlDynamicFormTextareaModule {}

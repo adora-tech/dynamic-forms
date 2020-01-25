@@ -1,14 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DynamicForm, DynamicFormConfig, DynamicFormConfigService, DynamicFormControl,
+import { DynamicForm, DynamicFormConfigService, DynamicFormControl,
   DynamicFormControlDefinition, DynamicFormDefinition, DynamicFormTextarea,
   DynamicFormValidationService} from '@dynamic-forms/core';
-import { DynamicFormTextareaComponent } from './dynamic-form-textarea.component';
-import { DynamicFormTextareaModule } from './dynamic-form-textarea.module';
+import { TlDynamicFormTextareaComponent } from './dynamic-form-textarea.component';
+import { TlDynamicFormTextareaModule } from './dynamic-form-textarea.module';
 
-describe('DynamicFormTextareaComponent', () => {
-  let fixture: ComponentFixture<DynamicFormTextareaComponent>;
-  let component: DynamicFormTextareaComponent;
+describe('TlDynamicFormTextareaComponent', () => {
+  let fixture: ComponentFixture<TlDynamicFormTextareaComponent>;
+  let component: TlDynamicFormTextareaComponent;
   let form: DynamicForm;
   let definition: DynamicFormControlDefinition<DynamicFormTextarea>;
   let formControl: DynamicFormControl<DynamicFormTextarea>;
@@ -16,18 +16,18 @@ describe('DynamicFormTextareaComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        DynamicFormTextareaModule
+        TlDynamicFormTextareaModule
       ],
       providers: [
         {
           provide: DynamicFormConfigService,
-          useValue: new DynamicFormConfigService(<DynamicFormConfig>{})
+          useValue: new DynamicFormConfigService({ name: 'test' })
         },
         DynamicFormValidationService
       ]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DynamicFormTextareaComponent);
+    fixture = TestBed.createComponent(TlDynamicFormTextareaComponent);
     component = fixture.componentInstance;
 
     form = new DynamicForm(<DynamicFormDefinition>{}, {});

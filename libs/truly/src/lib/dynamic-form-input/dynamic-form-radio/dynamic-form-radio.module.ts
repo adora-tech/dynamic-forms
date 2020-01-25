@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DynamicFormRadioComponent } from './dynamic-form-radio.component';
+import { TlDynamicFormRadioComponent } from './dynamic-form-radio.component';
 
 @NgModule({
   imports: [
@@ -9,10 +9,10 @@ import { DynamicFormRadioComponent } from './dynamic-form-radio.component';
     ReactiveFormsModule
   ],
   declarations: [
-    DynamicFormRadioComponent
+    TlDynamicFormRadioComponent
   ],
   entryComponents: [
-    DynamicFormRadioComponent
+    TlDynamicFormRadioComponent
   ]
 })
-export class DynamicFormRadioModule {}
+export class TlDynamicFormRadioModule {}

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CheckBoxModule} from 'truly-ui';
-import { DynamicFormCheckboxComponent } from './dynamic-form-checkbox.component';
+import { TlDynamicFormCheckboxComponent } from './dynamic-form-checkbox.component';
 
 @NgModule({
   imports: [
@@ -11,10 +11,10 @@ import { DynamicFormCheckboxComponent } from './dynamic-form-checkbox.component'
     CheckBoxModule
   ],
   declarations: [
-    DynamicFormCheckboxComponent
+    TlDynamicFormCheckboxComponent
   ],
   entryComponents: [
-    DynamicFormCheckboxComponent
+    TlDynamicFormCheckboxComponent
   ]
 })
-export class DynamicFormCheckboxModule {}
+export class TlDynamicFormCheckboxModule {}

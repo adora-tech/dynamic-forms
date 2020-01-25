@@ -1,14 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DynamicForm, DynamicFormCombobox, DynamicFormConfig, DynamicFormConfigService,
+import { DynamicForm, DynamicFormCombobox, DynamicFormConfigService,
   DynamicFormControl, DynamicFormControlDefinition, DynamicFormDefinition,
   DynamicFormValidationService} from '@dynamic-forms/core';
-import { DynamicFormComboboxComponent } from './dynamic-form-combobox.component';
-import { DynamicFormComboboxModule } from './dynamic-form-combobox.module';
+import { TlDynamicFormComboboxComponent } from './dynamic-form-combobox.component';
+import { TlDynamicFormComboboxModule } from './dynamic-form-combobox.module';
 
-describe('DynamicFormComboboxComponent', () => {
-  let fixture: ComponentFixture<DynamicFormComboboxComponent>;
-  let component: DynamicFormComboboxComponent;
+describe('TlDynamicFormComboboxComponent', () => {
+  let fixture: ComponentFixture<TlDynamicFormComboboxComponent>;
+  let component: TlDynamicFormComboboxComponent;
   let form: DynamicForm;
   let definition: DynamicFormControlDefinition<DynamicFormCombobox>;
   let formControl: DynamicFormControl<DynamicFormCombobox>;
@@ -16,18 +16,18 @@ describe('DynamicFormComboboxComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        DynamicFormComboboxModule
+        TlDynamicFormComboboxModule
       ],
       providers: [
         {
           provide: DynamicFormConfigService,
-          useValue: new DynamicFormConfigService(<DynamicFormConfig>{})
+          useValue: new DynamicFormConfigService({ name: 'test' })
         },
         DynamicFormValidationService
       ]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DynamicFormComboboxComponent);
+    fixture = TestBed.createComponent(TlDynamicFormComboboxComponent);
     component = fixture.componentInstance;
 
     form = new DynamicForm(<DynamicFormDefinition>{}, {});

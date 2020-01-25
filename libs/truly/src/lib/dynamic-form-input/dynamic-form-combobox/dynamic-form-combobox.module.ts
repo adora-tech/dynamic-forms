@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AutoCompleteModule} from 'truly-ui';
-import { DynamicFormComboboxComponent } from './dynamic-form-combobox.component';
+import { TlDynamicFormComboboxComponent } from './dynamic-form-combobox.component';
 
 @NgModule({
   imports: [
@@ -11,10 +11,10 @@ import { DynamicFormComboboxComponent } from './dynamic-form-combobox.component'
     AutoCompleteModule
   ],
   declarations: [
-    DynamicFormComboboxComponent
+    TlDynamicFormComboboxComponent
   ],
   entryComponents: [
-    DynamicFormComboboxComponent
+    TlDynamicFormComboboxComponent
   ]
 })
-export class DynamicFormComboboxModule {}
+export class TlDynamicFormComboboxModule {}

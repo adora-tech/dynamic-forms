@@ -1,14 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DynamicForm, DynamicFormConfig, DynamicFormConfigService, DynamicFormControl,
+import { DynamicForm, DynamicFormConfigService, DynamicFormControl,
   DynamicFormControlDefinition, DynamicFormDatepicker, DynamicFormDefinition,
   DynamicFormValidationService} from '@dynamic-forms/core';
-import { DynamicFormDatepickerComponent } from './dynamic-form-datepicker.component';
-import { DynamicFormDatepickerModule } from './dynamic-form-datepicker.module';
+import { TlDynamicFormDatepickerComponent } from './dynamic-form-datepicker.component';
+import { TlDynamicFormDatepickerModule } from './dynamic-form-datepicker.module';
 
-describe('DynamicFormDatepickerComponent', () => {
-  let fixture: ComponentFixture<DynamicFormDatepickerComponent>;
-  let component: DynamicFormDatepickerComponent;
+describe('TlDynamicFormDatepickerComponent', () => {
+  let fixture: ComponentFixture<TlDynamicFormDatepickerComponent>;
+  let component: TlDynamicFormDatepickerComponent;
   let form: DynamicForm;
   let definition: DynamicFormControlDefinition<DynamicFormDatepicker>;
   let formControl: DynamicFormControl<DynamicFormDatepicker>;
@@ -16,18 +16,18 @@ describe('DynamicFormDatepickerComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        DynamicFormDatepickerModule
+        TlDynamicFormDatepickerModule
       ],
       providers: [
         {
           provide: DynamicFormConfigService,
-          useValue: new DynamicFormConfigService(<DynamicFormConfig>{})
+          useValue: new DynamicFormConfigService({ name: 'test' })
         },
         DynamicFormValidationService
       ]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DynamicFormDatepickerComponent);
+    fixture = TestBed.createComponent(TlDynamicFormDatepickerComponent);
     component = fixture.componentInstance;
 
     form = new DynamicForm(<DynamicFormDefinition>{}, {});

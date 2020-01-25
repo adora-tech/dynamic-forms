@@ -5,7 +5,7 @@ import { DynamicFormInputBase, DynamicFormTextarea, DynamicFormValidationService
   selector: 'tl-dynamic-form-textarea',
   templateUrl: './dynamic-form-textarea.component.html'
 })
-export class DynamicFormTextareaComponent extends DynamicFormInputBase<DynamicFormTextarea> {
+export class TlDynamicFormTextareaComponent extends DynamicFormInputBase<DynamicFormTextarea> {
   constructor(protected validationService: DynamicFormValidationService) {
     super(validationService);
   }
