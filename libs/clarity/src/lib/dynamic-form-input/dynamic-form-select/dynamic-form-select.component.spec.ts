@@ -1,15 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { ClrSelectContainer } from '@clr/angular';
-import { DynamicForm, DynamicFormConfig, DynamicFormConfigService, DynamicFormControl,
+import { DynamicForm, DynamicFormConfigService, DynamicFormControl,
   DynamicFormControlDefinition, DynamicFormDefinition, DynamicFormSelect,
   DynamicFormValidationService} from '@dynamic-forms/core';
-import { DynamicFormSelectComponent } from './dynamic-form-select.component';
-import { DynamicFormSelectModule } from './dynamic-form-select.module';
+import { ClrDynamicFormSelectComponent } from './dynamic-form-select.component';
+import { ClrDynamicFormSelectModule } from './dynamic-form-select.module';
 
-describe('DynamicFormSelectComponent', () => {
-  let fixture: ComponentFixture<DynamicFormSelectComponent>;
-  let component: DynamicFormSelectComponent;
+describe('ClrDynamicFormSelectComponent', () => {
+  let fixture: ComponentFixture<ClrDynamicFormSelectComponent>;
+  let component: ClrDynamicFormSelectComponent;
   let form: DynamicForm;
   let definition: DynamicFormControlDefinition<DynamicFormSelect>;
   let formControl: DynamicFormControl<DynamicFormSelect>;
@@ -17,18 +17,18 @@ describe('DynamicFormSelectComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        DynamicFormSelectModule
+        ClrDynamicFormSelectModule
       ],
       providers: [
         {
           provide: DynamicFormConfigService,
-          useValue: new DynamicFormConfigService(<DynamicFormConfig>{})
+          useValue: new DynamicFormConfigService({ name: 'test' })
         },
         DynamicFormValidationService
       ]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DynamicFormSelectComponent);
+    fixture = TestBed.createComponent(ClrDynamicFormSelectComponent);
     component = fixture.componentInstance;
 
     form = new DynamicForm(<DynamicFormDefinition>{}, {});

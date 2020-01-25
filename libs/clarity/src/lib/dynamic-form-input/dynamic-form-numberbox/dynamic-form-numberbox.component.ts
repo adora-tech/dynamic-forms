@@ -5,7 +5,7 @@ import { DynamicFormInputBase, DynamicFormNumberbox, DynamicFormValidationServic
   selector: 'clr-dynamic-form-numberbox',
   templateUrl: './dynamic-form-numberbox.component.html'
 })
-export class DynamicFormNumberboxComponent extends DynamicFormInputBase<DynamicFormNumberbox> {
+export class ClrDynamicFormNumberboxComponent extends DynamicFormInputBase<DynamicFormNumberbox> {
   constructor(protected validationService: DynamicFormValidationService) {
     super(validationService);
   }

@@ -2,19 +2,32 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClrInputModule } from '@clr/angular';
-import { DynamicFormNumberboxComponent } from './dynamic-form-numberbox.component';
+import { DynamicFormConfigModule, DynamicFormInputType } from '@dynamic-forms/core';
+import { clrDynamicFormLibrary } from '../../dynamic-form-config/dynamic-form-library';
+import { ClrDynamicFormNumberboxComponent } from './dynamic-form-numberbox.component';
+
+export const clrDynamicFormNumberboxType: DynamicFormInputType = {
+  type: 'numberbox',
+  component: ClrDynamicFormNumberboxComponent,
+  libraryName: clrDynamicFormLibrary.name
+};
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    ClrInputModule
+    ClrInputModule,
+    DynamicFormConfigModule.withInput(clrDynamicFormNumberboxType)
   ],
   declarations: [
-    DynamicFormNumberboxComponent
+    ClrDynamicFormNumberboxComponent
+  ],
+  exports: [
+    ClrDynamicFormNumberboxComponent,
+    DynamicFormConfigModule
   ],
   entryComponents: [
-    DynamicFormNumberboxComponent
+    ClrDynamicFormNumberboxComponent
   ]
 })
-export class DynamicFormNumberboxModule {}
+export class ClrDynamicFormNumberboxModule {}

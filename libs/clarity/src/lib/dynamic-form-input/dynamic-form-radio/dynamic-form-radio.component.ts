@@ -5,7 +5,7 @@ import { DynamicFormInputBase, DynamicFormRadio, DynamicFormValidationService } 
   selector: 'clr-dynamic-form-radio',
   templateUrl: './dynamic-form-radio.component.html'
 })
-export class DynamicFormRadioComponent extends DynamicFormInputBase<DynamicFormRadio> {
+export class ClrDynamicFormRadioComponent extends DynamicFormInputBase<DynamicFormRadio> {
   constructor(protected validationService: DynamicFormValidationService) {
     super(validationService);
   }

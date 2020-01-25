@@ -5,7 +5,7 @@ import { DynamicFormCheckbox, DynamicFormInputBase, DynamicFormValidationService
   selector: 'clr-dynamic-form-checkbox',
   templateUrl: './dynamic-form-checkbox.component.html'
 })
-export class DynamicFormCheckboxComponent extends DynamicFormInputBase<DynamicFormCheckbox> {
+export class ClrDynamicFormCheckboxComponent extends DynamicFormInputBase<DynamicFormCheckbox> {
   constructor(protected validationService: DynamicFormValidationService) {
     super(validationService);
   }

@@ -1,15 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { ClrInputContainer } from '@clr/angular';
-import { DynamicForm, DynamicFormConfig, DynamicFormConfigService, DynamicFormControl,
+import { DynamicForm, DynamicFormConfigService, DynamicFormControl,
   DynamicFormControlDefinition, DynamicFormDefinition, DynamicFormTextbox,
   DynamicFormValidationService } from '@dynamic-forms/core';
-import { DynamicFormTextboxComponent } from './dynamic-form-textbox.component';
-import { DynamicFormTextboxModule } from './dynamic-form-textbox.module';
+import { ClrDynamicFormTextboxComponent } from './dynamic-form-textbox.component';
+import { ClrDynamicFormTextboxModule } from './dynamic-form-textbox.module';
 
-describe('DynamicFormTextboxComponent', () => {
-  let fixture: ComponentFixture<DynamicFormTextboxComponent>;
-  let component: DynamicFormTextboxComponent;
+describe('ClrDynamicFormTextboxComponent', () => {
+  let fixture: ComponentFixture<ClrDynamicFormTextboxComponent>;
+  let component: ClrDynamicFormTextboxComponent;
   let form: DynamicForm;
   let definition: DynamicFormControlDefinition<DynamicFormTextbox>;
   let formControl: DynamicFormControl<DynamicFormTextbox>;
@@ -17,18 +17,18 @@ describe('DynamicFormTextboxComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        DynamicFormTextboxModule
+        ClrDynamicFormTextboxModule
       ],
       providers: [
         {
           provide: DynamicFormConfigService,
-          useValue: new DynamicFormConfigService(<DynamicFormConfig>{})
+          useValue: new DynamicFormConfigService({ name: 'test' })
         },
         DynamicFormValidationService
       ]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DynamicFormTextboxComponent);
+    fixture = TestBed.createComponent(ClrDynamicFormTextboxComponent);
     component = fixture.componentInstance;
 
     form = new DynamicForm(<DynamicFormDefinition>{}, {});

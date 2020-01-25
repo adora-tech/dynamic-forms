@@ -2,20 +2,33 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClrCommonFormsModule, ClrDatepickerModule } from '@clr/angular';
-import { DynamicFormDatepickerComponent } from './dynamic-form-datepicker.component';
+import { DynamicFormConfigModule, DynamicFormInputType } from '@dynamic-forms/core';
+import { clrDynamicFormLibrary } from '../../dynamic-form-config/dynamic-form-library';
+import { ClrDynamicFormDatepickerComponent } from './dynamic-form-datepicker.component';
+
+export const clrDynamicFormDatepickerType: DynamicFormInputType = {
+  type: 'datepicker',
+  component: ClrDynamicFormDatepickerComponent,
+  libraryName: clrDynamicFormLibrary.name
+};
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
     ClrCommonFormsModule,
-    ClrDatepickerModule
+    ClrDatepickerModule,
+    DynamicFormConfigModule.withInput(clrDynamicFormDatepickerType)
   ],
   declarations: [
-    DynamicFormDatepickerComponent
+    ClrDynamicFormDatepickerComponent
+  ],
+  exports: [
+    ClrDynamicFormDatepickerComponent,
+    DynamicFormConfigModule
   ],
   entryComponents: [
-    DynamicFormDatepickerComponent
+    ClrDynamicFormDatepickerComponent
   ]
 })
-export class DynamicFormDatepickerModule {}
+export class ClrDynamicFormDatepickerModule {}

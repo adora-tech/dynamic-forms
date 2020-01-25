@@ -2,9 +2,11 @@ import { CommonModule } from '@angular/common';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClarityModule } from '@clr/angular';
-import { getDynamicFormProviders, DynamicFormsModule, DynamicFormConfig } from '@dynamic-forms/core';
+import { DynamicFormsModule, DynamicFormArrayModule, DynamicFormConfigModule,
+  DynamicFormContainerModule, DynamicFormContentModule, DynamicFormControlModule,
+  DynamicFormGroupModule, DYNAMIC_FORM_LIBRARY } from '@dynamic-forms/core';
+import { clrDynamicFormLibrary } from './dynamic-form-config/dynamic-form-library';
 import { ClrDynamicFormInputModule } from './dynamic-form-input/dynamic-form-input.module';
-import { clrDynamicFormConfig } from './dynamic-forms.config';
 
 @NgModule({
   imports: [
@@ -12,6 +14,12 @@ import { clrDynamicFormConfig } from './dynamic-forms.config';
     ReactiveFormsModule,
     ClarityModule,
     DynamicFormsModule,
+    DynamicFormArrayModule,
+    DynamicFormConfigModule.withValidation(),
+    DynamicFormContainerModule,
+    DynamicFormContentModule,
+    DynamicFormControlModule,
+    DynamicFormGroupModule,
     ClrDynamicFormInputModule
   ],
   exports: [
@@ -19,10 +27,15 @@ import { clrDynamicFormConfig } from './dynamic-forms.config';
   ]
 })
 export class ClrDynamicFormsModule {
-  static forRoot(config?: DynamicFormConfig): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ClrDynamicFormsModule> {
     return {
       ngModule: ClrDynamicFormsModule,
-      providers: getDynamicFormProviders(clrDynamicFormConfig, config)
+      providers: [
+        {
+          provide: DYNAMIC_FORM_LIBRARY,
+          useValue: clrDynamicFormLibrary
+        }
+      ]
     };
   }
 }
