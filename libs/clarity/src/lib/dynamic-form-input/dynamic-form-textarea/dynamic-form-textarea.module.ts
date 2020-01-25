@@ -23,8 +23,8 @@ export const clrDynamicFormTextareaType: DynamicFormInputType = {
     ClrDynamicFormTextareaComponent
   ],
   exports: [
-    ClrDynamicFormTextareaComponent,
-    DynamicFormConfigModule
+    DynamicFormConfigModule,
+    ClrDynamicFormTextareaComponent
   ],
   entryComponents: [
     ClrDynamicFormTextareaComponent

@@ -23,8 +23,8 @@ export const clrDynamicFormSelectType: DynamicFormInputType = {
     ClrDynamicFormSelectComponent
   ],
   exports: [
-    ClrDynamicFormSelectComponent,
-    DynamicFormConfigModule
+    DynamicFormConfigModule,
+    ClrDynamicFormSelectComponent
   ],
   entryComponents: [
     ClrDynamicFormSelectComponent

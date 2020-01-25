@@ -23,8 +23,8 @@ export const clrDynamicFormRadioType: DynamicFormInputType = {
     ClrDynamicFormRadioComponent
   ],
   exports: [
-    ClrDynamicFormRadioComponent,
-    DynamicFormConfigModule
+    DynamicFormConfigModule,
+    ClrDynamicFormRadioComponent
   ],
   entryComponents: [
     ClrDynamicFormRadioComponent

@@ -23,8 +23,8 @@ export const clrDynamicFormTextboxType: DynamicFormInputType = {
     ClrDynamicFormTextboxComponent
   ],
   exports: [
-    ClrDynamicFormTextboxComponent,
-    DynamicFormConfigModule
+    DynamicFormConfigModule,
+    ClrDynamicFormTextboxComponent
   ],
   entryComponents: [
     ClrDynamicFormTextboxComponent

@@ -24,8 +24,8 @@ export const clrDynamicFormDatepickerType: DynamicFormInputType = {
     ClrDynamicFormDatepickerComponent
   ],
   exports: [
-    ClrDynamicFormDatepickerComponent,
-    DynamicFormConfigModule
+    DynamicFormConfigModule,
+    ClrDynamicFormDatepickerComponent
   ],
   entryComponents: [
     ClrDynamicFormDatepickerComponent

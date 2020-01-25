@@ -1,36 +1,100 @@
 :host ::ng-deep {
-  .dynamic-form {
-    @import 'clarity-theme';
+  .dynamic-form-wrapper {
+    width: 100%;
+    max-width: 800px;
 
-    margin: 0 10px;
-
-    .dynamic-form-group {
-      margin: 10px 0 20px 0;
-
-      &.hidden {
-        display: none;
-      }
+    &.small {
+      max-width: 600px;
     }
-  
-    .dynamic-form-array {
-      margin: 10px 0 20px 0;
 
-      &.hidden {
-        display: none;
-      }
-    }
-    
-    .dynamic-form-control {
+    .dynamic-form {
+      @import 'clarity-theme';
+
       display: flex;
       flex-direction: column;
-      
-      &.hidden {
-        display: none;
+      margin: 0 10px;
+  
+      .clr-form-control {
+        .clr-control-container {
+          width: 100%;
+  
+          .clr-input {
+            width: 100%;
+          }
+          
+          .clr-input-group {
+            width: 100%;
+          }
+
+          .clr-select-wrapper {
+            width: 100%;
+            
+            .clr-select {
+              width: 100%;
+            }
+          }
+
+          .clr-textarea {
+            width: 100%;
+          }
+        }
+      }
+
+      &.container {
+        $grid-gutter-width: 20px;
+
+        @import '../../../../../../node_modules/bootstrap/scss/functions';
+        @import '../../../../../../node_modules/bootstrap/scss/variables';
+        @import '../../../../../../node_modules/bootstrap/scss/mixins';
+        @import '../../../../../../node_modules/bootstrap/scss/grid';
+
+        margin: 0 $grid-gutter-width / 2 + 10px;
+  
+        *, *::before, *::after {
+          box-sizing: border-box;
+        }
+
+        .row {
+          margin-top: 10px;
+          margin-bottom: 10px;
+  
+          dynamic-form-element, 
+          dynamic-form-group, 
+          dynamic-form-array, 
+          dynamic-form-control {
+            display: contents;
+          }
+        }
+      }
+
+      .dynamic-form-group {
+        margin: 10px 0 20px 0;
+  
+        &.hidden {
+          display: none;
+        }
+      }
+    
+      .dynamic-form-array {
+        margin: 10px 0 20px 0;
+  
+        &.hidden {
+          display: none;
+        }
       }
       
-      &.readonly {
-        input, textarea, select {
-          pointer-events: none;
+      .dynamic-form-control {
+        display: flex;
+        flex-direction: column;
+        
+        &.hidden {
+          display: none;
+        }
+        
+        &.readonly {
+          input, textarea, select {
+            pointer-events: none;
+          }
         }
       }
     }

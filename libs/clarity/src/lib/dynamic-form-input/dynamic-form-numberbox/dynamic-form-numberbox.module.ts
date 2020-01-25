@@ -23,8 +23,8 @@ export const clrDynamicFormNumberboxType: DynamicFormInputType = {
     ClrDynamicFormNumberboxComponent
   ],
   exports: [
-    ClrDynamicFormNumberboxComponent,
-    DynamicFormConfigModule
+    DynamicFormConfigModule,
+    ClrDynamicFormNumberboxComponent
   ],
   entryComponents: [
     ClrDynamicFormNumberboxComponent
